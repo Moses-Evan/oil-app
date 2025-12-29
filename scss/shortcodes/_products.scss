@@ -1,0 +1,27 @@
+.owl-carousel.products{
+  margin: 0;
+.product{
+  .product-inner{
+    .product-wrap{
+      padding: 55px 60px;
+      @media(max-width: 1200px){
+        padding: 55px 30px;
+      }
+    }
+  }
+}
+  .owl-stage{
+    margin: 20px 0;
+  }
+  .owl-stage-outer{
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+  .owl-item{
+    .product{
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+}

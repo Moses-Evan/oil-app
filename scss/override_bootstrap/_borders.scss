@@ -1,0 +1,12 @@
+// stylelint-disable declaration-no-important
+
+//
+// Border override
+//
+.border-right{
+  border-right: 1px solid $darkBorderColor !important;
+  @media(max-width: 991px){
+    border-right: none !important;
+
+  }
+}

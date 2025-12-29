@@ -1,0 +1,90 @@
+/* Countdown */
+#comingsoon-countdown {
+  text-align: center;
+}
+
+#comingsoon-countdown:before,
+#comingsoon-countdown:after {
+  clear: both;
+  display: table;
+  content: ' ';
+}
+
+.countdown-rtl {
+  direction: rtl;
+}
+.countdown_layout2{
+  .countdown-section {
+    min-width: 150px;
+    padding: 43px 20px;
+    border: none;
+    background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%);
+    margin: 0 15px 20px;
+    .countdown-amount{
+      color: $lightColor;
+    }
+    .countdown-period{
+      color: $lightColor;
+    }
+  }
+}
+
+.countdown-row {
+  clear: both;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: -20px;
+}
+
+.countdown-section {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 20px;
+  text-align: center;
+  min-width: 120px;
+  border: 2px solid $borderColor;
+  margin: 0 10px 20px;
+  border-radius: 5px;
+  @media(max-width: 1200px){
+   margin: 0 10px 20px !important;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &:first-child{
+    background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%);
+    margin-left: 0;
+    .countdown-amount{
+      color: $lightColor;
+    }
+    .countdown-period{
+      color: $lightColor;
+    }
+  }
+}
+
+.countdown-amount {
+  font-family: "Work Sans", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 300;
+  color: $colorMain;
+}
+
+.countdown-period {
+  display: block;
+  color: $darkColor;
+  font-size: 16px;
+  text-transform: capitalize;
+
+  font-weight: 500;
+
+}
+
+.countdown-descr {
+  display: block;
+}
+

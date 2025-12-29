@@ -1,0 +1,471 @@
+/*
+** Intro Section Styles
+*/
+
+.page_slider {
+  position: relative;
+  overflow: hidden;
+  //fix slider bug on small screens
+  clear: both;
+  .video-bg{
+    .s-overlay.ds:before{
+      opacity: 0.5;
+      z-index: 5;
+    }
+    @media (min-width: 1300px) {
+      background-image: none!important;
+    }
+    @media (max-width: 1200px){
+      .s-overlay.ds:before{
+        opacity: 0.6;
+      }
+    }
+  }
+
+  video{
+    min-width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .mouse_down{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 555;
+    transform-origin: center;
+    a{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 7px;
+    }
+    svg g > *{
+      fill:$lightColor;
+    }
+
+
+    a{
+      display: inline-block;
+    }
+    img{
+      height: 100%;
+    }
+  }
+  & > img {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 3em;
+    margin: 0;
+    line-height: 1;
+  }
+  h3 {
+    font-size: 2em;
+    margin: 0;
+    line-height: 1;
+  }
+  h4 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  p {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  @media(min-width: 992px) {
+    h2 {
+      font-size: 6em;
+    }
+    h3 {
+      font-size: 3em;
+    }
+    h4 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.7em;
+    }
+  }
+  .flex-direction-nav{
+    position: absolute;
+    bottom: 4.7%;
+    left: 0;
+    right: 0;
+    display: none;
+    @media(max-width: 1480px){
+      bottom: 10%;
+    }
+  }
+  .flex-direction-nav .flex-prev {
+    left: 3.6%;
+    opacity: 1;
+    top: auto;
+    bottom: 6.5%;
+    width: 100px;
+    height: 20px;
+    line-height: 1;
+    margin: 0;
+    transition: 0.3s ease;
+    @media(max-width: 1400px){
+      left: 5%;
+    }
+    &:hover{
+      &:after, &:before{
+        opacity: 0.7;
+      }
+    }
+    &:before{
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      left: 0;
+      font-size: 14px;
+
+      font-weight: 900;
+    }
+    &:after{
+      content: 'prev';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      right: -2px;
+      width: 80px;
+      height: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 13px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+  }
+  .flex-direction-nav .flex-next {
+    right: 3.6%;
+    opacity: 1;
+    top: auto;
+    bottom: 6.5%;
+    width: 100px;
+    height: 20px;
+    line-height: 1;
+    margin: 0;
+    transition: 0.3s ease;
+    @media(max-width: 1400px){
+      right: 5%;
+    }
+    &:hover{
+      &:after, &:before{
+        opacity: 0.7;
+      }
+    }
+    &:before{
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      right: 2px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    &:after{
+      content: 'next';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      left: 12px;
+      width: 80px;
+      height: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 13px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+  }
+
+  .flexslider {
+    //making every slide same height (stretch) for nice background on every slide
+    .slides {
+      display: flex;
+      @media(max-width: 1200px){
+        height: 800px;
+
+      }
+      @media(max-width: 991px){
+        img{
+          display: none;
+        }
+      }
+      @media(max-width: 768px){
+        height: 600px;
+      }
+      @media(max-width: 575px){
+        height: 600px;
+        img{
+          display: none;
+        }
+      }
+
+
+    }
+
+    //ie bugfix with page_slider overlap
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .intro_layer img {
+      width: auto;
+      display: inline-block;
+    }
+
+    //uncomment if you need a shadow on your slider
+    &.slider-shadow {
+      padding-bottom: 50px;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        background: transparent;
+        z-index: 1;
+        bottom: 65px;
+        left: 10px;
+        width: 50%;
+        height: 20%;
+        max-width: 400px;
+        box-shadow: 0 25px 20px rgba(0, 0, 0, 0.3);
+        transform: rotate(-3deg);
+      }
+      &:after {
+        right: 10px;
+        left: auto;
+        transform: rotate(3deg);
+      }
+    }
+  }
+
+  .intro_layers_wrapper {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .intro_after_featured_word {
+    font-size: 12px;
+    font-weight: 700;
+
+
+  }
+
+  .intro_layers {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 730px;
+    animation: bubble 5s linear infinite;
+    background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%);
+    padding: 187px 63px;
+    position: relative;
+    z-index: 1;
+    margin-left: 250px;
+    .btn{
+      margin-bottom: 0;
+    }
+    @media(max-width: 1200px){
+      padding: 100px 63px;
+      margin: 0 auto;
+    }
+    @media(max-width: 768px){
+      padding: 50px;
+      text-align: center;
+    }
+
+  }
+
+  //dots - horizontal
+  .flex-control-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+      a {
+        display: block;
+        margin: 0 5px;
+        cursor: pointer;
+        font-size: 0;
+        width: 50px;
+        height: 2px;
+        background: #ffffff;
+        opacity: 0.5;
+        border-radius: 0;
+        position: relative;
+
+        &:hover{
+          background: #ffffff;
+
+          opacity: 1;
+        }
+        &.flex-active  {
+          background: #ffffff;
+          position: relative;
+          opacity: 1;
+          span.span-active{
+            font-family: "Work Sans", sans-serif;
+            font-weight: 600;
+            display: inline-block;
+            position: absolute;
+            font-size: 16px;
+            color: $lightColor;
+            top: -25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+          }
+      
+        }
+      }
+    }
+  }
+
+  //lg and bigger layout
+  @media(min-width: 300px) {
+
+    .cs,
+    .ds {
+      background-color: transparent;
+    }
+
+    //description alignment
+    //for intro with testimonials,
+    //for static intro
+    //.flexslider prefix removed
+    .container-fluid,
+    .container,
+    img + .container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    [class*="col-"] {
+      position: static;
+      min-height: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+
+    }
+
+    // center alignment for slide description
+    .intro_layers_wrapper {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 15px;
+      left: 15px;
+      height: 100%;
+      z-index: 5;
+
+      @media (min-width: 600px) {
+        .boxed & {
+          padding-left: 60px;
+          padding-right: 60px;
+        }
+      }
+    }
+
+    .intro_text_top .intro_layers {
+      justify-content: flex-start;
+    }
+    .intro_text_bottom .intro_layers {
+      justify-content: center;
+    }
+
+    .intro_before_featured_word {
+
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 20px;
+
+
+
+      @media(max-width: 768px){
+        font-size: 12px;
+      }
+    }
+    .intro_featured_word {
+      font-size: 100px;
+      line-height: 1;
+      font-weight: 300;
+      margin-bottom: 45px;
+
+      letter-spacing: -1px;
+      @media(max-width: 1450px){
+        font-size: 60px;
+
+      }
+      @media(max-width: 768px){
+        font-size: 40px;
+
+      }
+      @media(max-width: 575px){
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      span{
+        display: inline-block;
+      }
+    }
+
+    .intro_after_featured_word {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 50px;
+      @media (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+      @media (max-width: 575px) {
+        font-size: 16px;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+    }
+
+  }
+
+  //md and smaller - static container on small device
+  @media (max-width: 991px) {
+    & {
+      text-align: center;
+    }
+  }
+}

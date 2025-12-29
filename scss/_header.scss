@@ -1,0 +1,480 @@
+/*
+** Header
+*/
+.default-header{
+  .sf-menu > li{
+    padding-top: 0;
+  }
+  .sf-menu > li > a{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 15px;
+  }
+}
+
+.page_header_side.header-special{
+  z-index: 1010;
+  padding: 0;
+
+  .close-wrapper{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 50px;
+    font-weight: 300;
+    font-family: "Work Sans", sans-serif;
+    line-height: 1;
+  }
+  .widget-title{
+    font-size: 20px;
+  }
+  .widget{
+    margin-top: 30px;
+    padding: 0;
+  }
+  a.bg-icon{
+    &:hover{
+      background: $lightColor;
+      color: $colorMain;
+    }
+  }
+  .side_header_inner{
+    padding: 60px;
+  }
+  li.media{
+    margin-top: 0;
+  }
+  .vertical-item{
+    .item-content{
+      padding: 0;
+      .entry-title{
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+      .entry-meta{
+        .byline{
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+.topline-2{
+  .metaphone{
+    font-size: 14px;
+    font-weight: 500;
+    a{
+      margin-left: 5px;
+      letter-spacing: 1px;
+    }
+  }
+  @media (min-width: 1200px){
+    li{
+      padding: 0;
+    }
+    .sf-menu > li > a {
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 15px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+.header-1{
+  .toggle_menu:not(.toggle_menu_side_special){
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    @media(max-width: 767px){
+      right: 15px;
+      left: auto;
+      transform: none;
+      bottom: 10px;
+      top: auto;
+    }
+    span{
+      height: auto;
+      background: transparent;
+      top: 50%;
+      transform: translateY(-50% );
+      left: 0;
+      right: 0;
+      text-align: center;
+      width: 100%;
+      &:before, &:after{
+        display: none;
+
+      }
+    }
+    &.mobile-active{
+      right: 0;
+      left: auto;
+      transform: none;
+      top: 0;
+      span{
+        display: none;
+      }
+      &:before{
+
+        transform: rotate(45deg) translateY(-50%);
+        top: 50%;
+        transform-origin: center;
+        width: 70%;
+        margin: 0 auto;
+      }
+      &:after{
+
+        transform: rotate(-45deg) translateY(50%);
+        bottom: 50%;
+        transform-origin: center;
+        width: 70%;
+        margin: 0 auto;
+      }
+
+    }
+    &:before{
+      top: 20%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      transform: rotate(0deg);
+      transform-origin: center center;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      transform: rotate(0deg);
+      transform-origin: center center;
+
+      height: 2px;
+      background: $lightColor;
+
+      transition: .25s ease-in-out;
+    }
+  }
+}
+.header-2{
+  .dropdown.shopping-cart{
+    .badge{
+      left: 34px;
+      top: 34px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .dropdown-toggle{
+
+    }
+  }
+  @media (min-width: 1200px){
+    .sf-menu > li > a {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+
+.page_header {
+  &.ds{
+    &.affix{
+      background:$darkgreyColor !important;
+    }
+  }
+  &.ls{
+    &.affix{
+      background:$lightColor !important;
+    }
+  }
+  //same as .page_header_side
+  transition: $headerTransition;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  margin: 0;
+  //padding: 0;
+
+  //display_table fix on affix
+  height: auto;
+
+  .boxed &,
+  &.affix {
+    position: fixed !important;
+    z-index: 1001;
+    box-shadow: $boxShadow;
+    opacity: 0.98;
+    //remove bottom border for affixed header with s-borderbottom class
+    &:after {
+      background-color: transparent;
+    }
+
+
+
+
+  }
+  //hidding top border on affixed header
+  &.affix.s-bordertop::before {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    &.mobile-active {
+      z-index: 1003;
+      opacity: 1;
+    }
+  }
+
+  //fix bug when refresh page at the bottom and header goes down
+  &.affix-bottom {
+    //!important is necessary
+    top: 0 !important;
+    position: fixed !important;
+  }
+
+  //min height for mobile toggler be always on header
+  //for prevent header mobile menu toggler overlap bordered header
+  // 62 - broken design on 60px color toggler - back to 60
+  .row {
+    min-height: 60px;
+  }
+
+
+  //fix header buttons dropdown
+  .dropdown {
+    //white-space: nowrap;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .btn {
+    margin-bottom: 0;
+
+  }
+}
+
+.page_header_wrapper {
+  transition: height 0.5s ease;
+}
+
+//when refreshing page - header height is smaller because it is affixed
+//fixing
+//absolute header when using header on slider or on title (for parallax or image background)
+.header_absolute {
+  position: absolute;
+  right: 0;
+  left: 0;
+  .page_topline{
+    z-index: 1003;
+    position: relative;
+    right: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .page_header,
+  .page_header_wrapper {
+    z-index: 1002;
+    position: relative;
+    right: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    &.mobile-active{
+      z-index: 1004;
+    }
+
+  }
+
+
+
+  //&.cover-background {
+
+
+    //fix for boxed layout
+
+  //}
+
+}
+
+  a.logo{
+    img{
+      width: 60px;
+    }
+  }
+
+
+
+.topline-1{
+
+  .top-includes{
+
+  }
+}
+//other header sections
+.page_topline {
+  line-height: 1.4;
+
+  &.small-text i {
+    font-size: 14px;
+  }
+
+  .icon-inline {
+    justify-content: center;
+  }
+  .social-icons {
+    display: inline-block;
+    @media(max-width: 768px){
+      margin-bottom: 15px;
+    }
+    a{
+      margin-right: 13px;
+      font-size: 16px;
+
+      &:hover{
+        color: $colorMain2;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      @media(max-width: 991px){
+        margin-right: 8px;
+      }
+    }
+  }
+  //topline menu
+  .widget_nav_menu {
+    display: inline-block;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+    }
+  }
+
+  .dropdown.shopping-cart{
+    .dropdown-menu {
+      width: 430px;
+      @media(max-width: 767px){
+        left: -40px;
+
+      }
+      @media(max-width: 575px){
+        width: 90vw;
+        text-align: center;
+        left: -33px;
+
+      }
+
+    }
+
+  }
+  .dropdown-menu {
+    right: 0px;
+    left: auto;
+   width: 300px;
+    margin-top: 10px;
+
+    @media(max-width: 767px){
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: center;
+      right: auto;
+
+    }
+    @media(max-width: 575px){
+      width: 90vw;
+    }
+
+  }
+  .dropdown-language {
+    //flags
+    a > img {
+      max-width: 16px;
+      position: relative;
+      bottom: 1px;
+      margin-right: 6px;
+    }
+  }
+
+  //news owl-carousel
+  .owl-news-slider-dates {
+    font-weight: 700;
+  }
+  .topline-news-item {
+    height: 2em;
+    line-height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 90px;
+    .cat-links {
+      display: inline;
+    }
+  }
+
+  .owl-nav > div {
+    opacity: 1;
+  }
+
+}
+.owl-topline-news-slider{
+  .owl-nav{
+    top: 0;
+  }
+}
+
+.page_toplogo {
+  @media (min-width: 992px) {
+    .media + .media {
+      margin-left: 60px;
+      margin-top: 0;
+    }
+  }
+
+  .widget_search form, .widget_product_search form,
+  .widget_search input, .widget_product_search input {
+    max-width: none;
+  }
+
+  @media (max-width: 991px) {
+    .media {
+      margin: 10px;
+    }
+  }
+}
+
+.page_topline,
+.page_toplogo,
+.page_header {
+  .container-fluid {
+    @media(min-width: 1500px) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+}
+
+@import 'header/header_includes';
+@import 'header/logo';
+@import 'header/search_modal';

@@ -1,0 +1,200 @@
+/* bootstrap tabs*/
+.nav-tabs {
+  border-bottom: none;
+  .nav-item{
+    padding: 0;
+    margin-bottom: 0;
+    @media(max-width: 575px){
+      width: 100%;
+    }
+  }
+  .nav-link {
+    border-radius: 5px 5px 0 0;
+    margin-right: 4px;
+    padding: 22px 42px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: capitalize;
+    background: $greyColor;
+    color: $darkgreyColor;
+
+    border: none;
+    font-weight: 500;
+    @media(max-width: 1200px){
+      min-width: 200px;
+    }
+    @media(max-width: 991px){
+      min-width: 150px;
+    }
+    @media(max-width: 575px){
+      width: 100%;
+    }
+
+
+    &:hover {
+
+      background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+      color: $lightColor;
+    }
+  }
+
+  .nav-item.show .nav-link,
+  .nav-link.active {
+    background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+    color: $lightColor;
+  }
+
+
+  &.vertical-tabs{
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+    .nav-item{
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .nav-link{
+      border: 2px solid $borderColor;
+      background: #fff;
+      color: $fontColor;
+      text-align: left;
+      min-width: unset;
+      padding: 30px 40px;
+      @media( max-width: 575px){
+        text-align: center;
+      }
+      .media{
+        .media-body{
+          margin-left: 14px;
+          @media( max-width: 575px){
+            margin-left: 0;
+          }
+          h6{
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            margin-bottom: 15px;
+        
+            letter-spacing: -0.2px;
+          }
+        }
+      }
+      &:hover{
+        background-color: $greyColor;
+        border-color: $greyColor;
+      }
+    }
+    .nav-item.show .nav-link,
+    .nav-link.active {
+      background-color: $greyColor;
+      border-color: $greyColor;
+    }
+  }
+}
+
+
+
+.tab-content {
+  border: 2px solid $borderColor;
+  padding: 40px;
+  @media(max-width: 575px){
+    padding: 30px;
+  }
+  &.border-none{
+    border: none;
+    width: 100%;
+    margin-left: 20px;
+    @media(max-width: 991px){
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  }
+
+}
+
+.tab-pane {
+  .media {
+    img {
+      max-width: 40%;
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+    h3, h4, h5 {
+      font-weight: 900;
+    }
+  }
+}
+.tabs-accardion{
+  .nav-tabs{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    @media(max-width: 575px){
+      margin-bottom: 20px;
+    }
+    .nav-item{
+      .nav-link{
+        font-family: "Work Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 27px;
+        border: 2px solid $darkColor;
+        background: transparent;
+        border-radius: 5em;
+        text-transform: capitalize;
+        line-height: 1;
+        transition: background 0.3s ease-in-out;
+        margin-bottom: 10px;
+        & + a{
+          margin-left: 10px;
+        }
+        &:hover{
+          color: $lightColor;
+          background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+          border: none;
+          padding: 12px 29px;
+        }
+        &.active {
+          color: $lightColor;
+          background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+          border-width: 0;
+          padding: 12px 29px;
+        }
+      }
+    }
+  }
+  .tab-content{
+    padding: 0;
+    border: none;
+    [role="tablist"] .card-body{
+      padding: 3.8em 0 2.4em;
+      @media(max-width: 768px){
+        padding: 2.4em 0 1.4em;
+      }
+    }
+
+
+    .side-item{
+      display: flex;
+      @media(max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+      }
+      .item-media{
+        flex-shrink: 0;
+        border-radius: 5px;
+        flex-basis: 47%;
+        width: 47%;
+      }
+      .item-content{
+        padding: 0 0 0 60px;
+        @media(max-width: 768px){
+          padding:  30px 0 0 0;
+        }
+      }
+    }
+  }
+}

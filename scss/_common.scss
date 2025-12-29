@@ -1,0 +1,390 @@
+/*
+** General Styles for HTML tags
+*/
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+::selection {
+  color: $lightColor;
+  background-color: $colorMain;
+
+}
+
+::-moz-selection {
+  color: $lightColor;
+  background-color: $colorMain;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: $lightColor;
+  overflow: visible;
+  overflow-x: hidden;
+  //for scrollbar always seen
+  overflow-y: scroll;
+  //for scrollspy
+  position: relative;
+  counter-reset: special-heading;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  //text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.2em;
+  word-break: break-word;
+  margin-top: 0.65em;
+  margin-bottom: 0.6em;
+  font-family: 'Work Sans', sans-serif;
+  //fix for Raleway numbers
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+h1{
+  font-size: 45px;
+  margin-top: 1.2em;
+  margin-bottom: 0.7em;
+}
+
+h2{
+  font-size: 40px;
+  margin-top: 1.2em;
+  margin-bottom: 0.7em;
+}
+
+h3{
+  font-size: 35px;
+  margin-top: 1.3em;
+  margin-bottom: 0.8em;
+
+
+}
+
+h4 {
+  font-size: 30px;
+  margin-top: 1.6em;
+  margin-bottom: 0.9em;
+}
+
+h5 {
+  font-size: 25px;
+  margin-top: 1.6em;
+  margin-bottom: 1.2em;
+}
+
+h6 {
+  font-size: 20px;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+
+}
+@media (max-width: 991px) {
+  h1 {
+    font-size: 2.8rem
+  }
+  h2 {
+    font-size: 2.6rem
+  }
+  h3 {
+    font-size: 2.1rem
+  }
+  h4 {
+    font-size: 1.8rem
+  }
+  h5 {
+    font-size: 1.6rem
+  }
+  h6 {
+    font-size: 1.4rem
+  }
+}
+@media (max-width: 575px) {
+  h1 {
+    font-size: 2.1rem
+  }
+  h2 {
+    font-size: 2rem
+  }
+  h3 {
+    font-size: 1.8rem
+  }
+  h4 {
+    font-size: 1.6rem
+  }
+  h5 {
+    font-size: 1.3rem
+  }
+  h6 {
+    font-size: 1.2rem
+  }
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.5em;
+}
+
+ul:last-child,
+ol:last-child,
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul, ol{
+  list-style-position: inside;
+  li{
+    padding: 10px 0 10px 0;
+
+
+
+    & > ul, & > ol {
+      margin-bottom: 0;
+      margin-left: 1.5em;
+      margin-top: 10px;
+
+    }
+  }
+}
+ol.list2 {
+  counter-reset: li;
+  list-style: none inside none;
+  margin-bottom: 0;
+  padding: 0;
+  margin-top: 20px;
+  li {
+    position: relative;
+    color: $darkgreyColor;
+    padding: 5px 0 5px 30px;
+    &::before{
+      content: counter(li)".";
+      counter-increment: li;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      font-weight: 500;
+      color: $colorMain;
+    }
+  }
+}
+
+p:last-child {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+img, figure {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  p {
+    margin-bottom: 0;
+  }
+  font-size: 0.95em;
+  line-height: 1.4;
+  padding: 10px 0 7px;
+}
+
+b, strong {
+  font-weight: 700;
+  color: $darkColor;
+}
+
+label {
+  color: $darkgreyColor;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out 0s;
+  color: $darkgreyColor;
+  &:hover {
+    color: $fontColor;
+    text-decoration: none;
+    transition: all 0.15s linear 0s;
+  }
+}
+
+blockquote {
+  margin: 60px 0;
+  padding: 60px 13.5%;
+  background: $backgroundColor;
+  @media(max-width: 768px){
+    padding: 40px 13.5% 40px 18.5%;
+  }
+  @media(max-width: 400px){
+    padding: 40px 13.5% 40px 23.5%;
+  }
+  p{
+    position: relative;
+    font-style: italic;
+  }
+  cite{
+    color: $colorMain2;
+    font-weight: 500;
+    font-style: normal;
+  }
+  & p:before{
+   content: '';
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: -105px;
+    -webkit-mask: url("../img/quote.png") no-repeat center / contain;
+    background: $colorMain2;
+    width: 72px;
+    height: 72px;
+    @media(max-width: 991px){
+      width: 50px;
+      height: 50px;
+      left: -70px;
+    }
+    @media(max-width: 575px){
+      width: 36px;
+      height: 36px;
+      left: -50px;
+    }
+  }
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: medium none;
+  text-decoration: none;
+}
+
+a > img {
+  transition: all 0.15s ease-in-out 0s;
+}
+
+a:hover > img {
+  opacity: 0.7;
+}
+
+a.btn:active,
+a.button:active,
+button:active,
+input[type="submit"]:active {
+
+}
+
+hr {
+  border-color: $borderColor;
+  //for flexbox
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+iframe {
+  border: none;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+  td, th {
+    padding: 20px 13px;
+
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border: 1px solid $borderColor;
+    text-align: left;
+  }
+  th {
+    color: $darkgreyColor;
+    font-weight: normal;
+    vertical-align: middle;
+    padding: 13px 13px;
+  }
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+pre {
+  line-height: 1.5;
+  background-color: $universalBackgroundColor;
+  padding: 0.5em 1em;
+}
+//block with signature on main page
+.big {
+  margin: 0.45em 0 1em;
+
+  line-height: 1.1em;
+  @media(max-width: 575px){
+    font-size: 16px;
+  }
+  em {
+    display: inline-block;
+    margin: 0.3em 0 0;
+    @media (min-width:768px) {
+      margin: 1em 0 0.5em;
+
+    }
+  }
+}
+.bigger{
+  font-size: 30px;
+}
+
+.media {
+  h3 {
+    text-transform: uppercase;
+  }
+  .dropcap {
+    margin-right: 0;
+  }
+}
+
+.small-text {
+  @include small-text();
+  &.extra-letter-spacing {
+    @media (min-width: 768px) {
+      letter-spacing: 1em;
+    }
+  }
+}

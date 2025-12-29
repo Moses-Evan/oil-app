@@ -1,0 +1,40 @@
+.shop-categories-carousel{
+  .vertical-item{
+    padding: 0 30px;
+    &.item-icon{
+      .item-content{
+        .cat-links{
+          a{
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: 0;
+          }
+        }
+      }
+
+    }
+    .item-media{
+      height: 100%;
+      width: 100%;
+      img{
+        border-radius: 50%;
+      }
+    }
+    .item-content{
+      padding: 0;
+      .cat-links a{
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-top: 38px;
+        margin-bottom: 23px;
+        @media(max-width: 575px){
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
+      }
+
+    }
+  }
+
+}

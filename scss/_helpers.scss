@@ -1,0 +1,25 @@
+/*
+** Helper Utilities
+*/
+@import 'helpers/helpers_layout';
+@import 'helpers/helpers_colors';
+@import 'helpers/helpers_spacing';
+
+
+.divider-line{
+  margin-top: 18px;
+  height: 2px;
+  width: 50px;
+  &.text-center.text-sm-left{
+    margin-right: auto;
+    margin-left: 0;
+    @media(max-width: 575px){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &.text-center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

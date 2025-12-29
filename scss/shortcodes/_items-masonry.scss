@@ -1,0 +1,134 @@
+/*
+** Items Masonry
+*/
+.items-tile {
+  .item-content {
+    //for icons
+    padding-bottom: 100px;
+    h3 {
+      //font-weight: 900;
+      text-transform: none;
+      margin-bottom: 0.3em;
+    }
+
+    @media (min-width: 992px) {
+      h3 {
+        //content overflow
+        a {
+          display: inline-block;
+          max-height: 3.05em;
+          overflow: hidden;
+          padding-bottom: 0.1em;
+        }
+
+        //excerpt
+        & + p {
+          max-height: 5.5em;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .item-icons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    line-height: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 40px;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.1);
+    span {
+      padding: 0 15px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .col-lg-4 [class*='col-'] {
+      &:first-child .item-media {
+        margin-bottom: 32px;
+      }
+      &:last-child .item-content {
+        min-height: 320px;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    .item-content {
+      padding: 60px 60px 100px;
+      h3 {
+        font-size: 38px;
+      }
+    }
+
+    //making vertical item media image +10px height on big screens
+    .col-lg-4 [class*='col-'] {
+      &:first-child .item-media {
+        margin-bottom: 16px;
+      }
+      &:last-child .item-content {
+        min-height: 388px;
+      }
+    }
+  }
+}
+
+/*
+filters
+*/
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  @media(max-width: 768px){
+    margin-bottom: 30px;
+  }
+  a {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 27px;
+    border: 2px solid $darkColor;
+    border-radius: 5em;
+    text-transform: capitalize;
+    line-height: 1;
+    transition: background 0.3s ease-in-out;
+    margin-bottom: 10px;
+    & + a{
+      margin-left: 10px;
+    }
+    &:hover{
+      color: $lightColor;
+      background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+      border: none;
+      padding: 12px 29px;
+    }
+  }
+  .active {
+    color: $lightColor;
+    background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 100%);
+    border-width: 0;
+    padding: 12px 29px;
+  }
+}
+
+//view gallery / load more button top margin:
+.isotope-wrapper {
+  @media (min-width: 992px) {
+    & + .row {
+      margin-top: 60px;
+    }
+    &.c-mb-30 + .row {
+      margin-top: 30px;
+    }
+    &.c-mb-10 + .row {
+      margin-top: 50px;
+    }
+    &.c-mb-1 + .row {
+      margin-top: 59px;
+    }
+  }
+}

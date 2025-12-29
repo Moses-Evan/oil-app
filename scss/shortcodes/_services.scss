@@ -1,0 +1,109 @@
+.service-single{
+  &.with-icon{
+    position: relative;
+    transition: 0.6s ease-in-out;
+    overflow: hidden;
+    height: 100%;
+    &:before{
+      content: '';
+      height: 2px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      width: 0;
+      background: $colorMain;
+      transition: 0.6s ease-in-out;
+    }
+    &:hover{
+      &:before{
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    @media(max-width: 1200px){
+      padding: 50px 30px 40px;
+    }
+
+
+    &.layout2{
+      padding: 55px;
+      @media(max-width: 1800px){
+        padding: 40px;
+      }
+      @media(max-width: 1400px){
+        padding: 40px 15px;
+      }
+      @media(max-width: 1200px){
+        padding: 40px 35px;
+      }
+      overflow: auto;
+      transition: none;
+      position: static;
+      h6, h5{
+        position: relative;
+        padding-bottom: 25px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        &:after{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          background: $colorMain;
+          width: 50px;
+          height: 2px;
+
+        }
+      }
+      a.btn{
+        margin-top: 28px;
+        min-width: 40px;
+        border-radius:50%;
+        padding: 10px 0px;
+      }
+    }
+  }
+}
+.service-v2{
+  $opacity: 1;
+  [class*="col-"]{
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        .service-single.with-icon.layout2{
+          background: rgba($darkColor, $opacity);
+          &:before{
+            display: none;
+          }
+          &:hover{
+            background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%);
+            .icon-styled{
+              i{
+                -webkit-text-fill-color: $lightColor;
+              }
+
+            }
+            h6{
+              &:after{
+                background: $lightColor;
+              }
+            }
+          }
+          .icon-styled{
+            i{
+              background: linear-gradient(to top, $colorMain 0%, $colorMain3 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+      }
+      $opacity:$opacity - 0.2;
+    }
+  }
+
+}

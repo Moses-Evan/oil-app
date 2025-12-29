@@ -1,0 +1,89 @@
+/* bootstrap breadcrumbs*/
+.breadcrumb-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.breadcrumb {
+  margin: 0;
+  padding: 16px 51px;
+  @media(max-width: 575px){
+    padding: 10px 15px;
+  }
+  background-color: transparent;
+  border-radius: 5em;
+  text-transform: capitalize;
+  color: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $lightColor;
+  & > li.breadcrumb-item {
+    display: inline-block;
+    padding: 0;
+    float: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "Work Sans", sans-serif;
+    text-transform: uppercase;
+    line-height: 1.6;
+    letter-spacing: 0;
+    a{
+
+      font-weight: 500;
+
+
+    }
+
+  }
+
+
+  @media (min-width: 992px) {
+    .text-lg-right & {
+      justify-content: flex-end;
+    }
+  }
+}
+.ds{
+  .breadcrumb > .active {
+    font-weight: 500;
+    color: $lightColor;
+  }
+}
+.ls{
+  .breadcrumb > .active {
+    font-weight: 500;
+    color: $fontColor;
+  }
+}
+
+
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  color: $lightColor;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0 24px;
+
+}
+legend{
+  padding-top: 1.2em;
+  margin-bottom: 0.7em;
+  font-size: 36px;
+  color: $darkColor;
+  font-weight: 500;
+  @media(max-width: 575px){
+    font-size: 1.8rem
+  }
+}
+.ls{
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: $darkColor;
+  }
+}

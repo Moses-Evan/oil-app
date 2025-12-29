@@ -1,0 +1,155 @@
+///////////////////
+//theme variables//
+///////////////////
+
+//Colors
+
+//Monochrome colors
+
+//text color in light section (.ls)
+$fontColor: #999999;
+//background color for light section (.ls) and font color in dark section (.ds)
+$lightColor: #ffffff;
+//text color for headings in light section (.ls) and background color for dark section (.ds)
+$darkgreyColor: #09445a;
+//background color for light grey background light section (grey - .ls.ms)
+$greyColor: #f2f5f7;
+
+//background color for dark muted section (.ds.ms)
+$darkColor: #042b3d;
+//border colors for elements in light section (.ls) (and .bordered elements)
+$borderColor: #f2f5f7;
+//rgba variant for bordered elements
+$borderColorRGBA: rgba(#000, 0.1);
+//background color for hero background elements in light section (.hero-bg)
+$backgroundColor: #e6ecef;
+
+$boxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+//section specific variables
+
+// dark section - .ds
+
+//font color in dark section (.ds)
+$darkFontColor: #fff;
+//border colors in dark section (.ds)
+$darkBorderColor: #fff;
+//background color for elements with background (.hero-bg etc.)
+$darkBackgroundColor: rgba(#fff, 0.05);
+
+//color section - .cs
+
+//border colors in color section (.cs)
+$colorBorderColor: rgba(#fff, 0.15);
+$colorBackgroundColor: rgba(#fff, 0.1);
+
+//dark grey background dark blue section - (.ds.bs)
+$darkBlueColor: #253138;
+$darkBlueColorLighter: #2f3e47;
+
+//Accent Color schemes
+
+//this variables is used in development process
+//in production color variables are overridden in 'color_schemes' folder
+
+//theme accent colors
+$styleNumber: '' !default;
+$colorMain: #dd4454 !default;
+$colorMain2: #09445a !default;
+$colorMain3: #dd9044 !default;
+$colorMain4: #ff0000 !default;
+
+
+
+
+
+
+//////bootstrap colors
+//orange - warning
+$colorPrimary: $colorMain !default;
+//green
+$colorSuccess: #98cb2b !default;
+//blue
+$colorInfo: #00b2f0 !default;
+//orange
+$colorWarning: #edb879 !default;
+//red
+$colorDanger: #fb4f1b !default;
+
+//universal muted background color
+$universalBackgroundColor: rgba(150, 150, 150, 0.05) !default;
+$universalBorderColor: rgba(200, 200, 200, 0.35) !default;
+
+//Layout
+//////side header
+$sideHeaderWidth: 360px;
+//inner side header padding
+$sideHeaderLeftRightPadding: 30px;
+//header transition
+$headerTransition: 0.5s ease-in-out;
+
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+//_horizontal spacers
+//reverse for smaller gutters has priority
+$columns-horizontal-gutters-sum: 120 110 100 90 80 60 50 30 25 20 15 10 5 2 1 0;
+$container-horizontal-padding: 0 1 2 5 10 17 20 30 45 60 70 100 110 120 160 200 210 220 285;
+
+//_vertical spacers - vertical margins and padding for sections and columns
+$section-vertical-padding: 0 1 2 3 5 7 10 11 12 15 17 20 23 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 147 150 155 157 160 165 170 175 180 185 190 195 200 205 210 220 225 230 235 250 260 270 280 290 295 340 350;
+$columns-vertical-margins: 0 1 2 5 10 15 20 25 30 40 50 60;
+
+//top and bottom borders height for sections with borders - 1px by default
+$section-borders-height: 2 3 5;
+
+//font size helpers - fs-xx
+$font-size-helpers: 12 14 16 18 20 24 28 30 32 36 40 46 50 56 60 70;
+
+$dividers-height: -235 -210 -198 -10 -5 0 10 15 20 23 25 28 30 31 35 40 45 48 50 55 58 60 65 70 75 76 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 160 175 215 230 235 250;
+
+@mixin small-text() {
+  font-size: 16px;
+  line-height: 1.1em;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0em;
+}
+
+@mixin cover() {
+  content: '';
+  position: absolute;
+  display: block;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin widget-title() {
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 1.3em;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+
+}
+
+@mixin widget-a-before() {
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  content: "\f111";
+  font-weight: 900;
+  font-size: 5px;
+  line-height: 0.7;
+  color: $colorMain;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  display: inline-block;
+}
+

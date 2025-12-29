@@ -1,0 +1,73 @@
+/* bootstrap dropdown menu */
+.dropdown-menu {
+  border: none;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 0.9rem;
+  z-index: 1004;
+
+  padding: 40px;
+  right: 0px;
+  left: auto;
+  width: 300px;
+  margin-top: 10px;
+  background-color: $lightColor;
+
+  font-size: inherit;
+  line-height: 1.5;
+  &.dropdown-shopping-cart{
+    width: 500px;
+  }
+  > a {
+    display: block;
+    white-space: nowrap;
+    //for language flags
+    > img {
+      max-width: none;
+    }
+  }
+
+  > a + a {
+    margin-top: 1.5em;
+  }
+
+  .dropdown & label,
+  .dropdown & h3,
+  .dropdown & h4 {
+    color: $darkgreyColor;
+  }
+  .dropdown.show & input {
+    border: 1px solid $borderColor;
+  }
+}
+
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+  color: $darkgreyColor;
+  background-color: transparent;
+}
+
+.dropdwon-menu-title {
+  padding: 10px 30px;
+}
+
+.dropdown{
+
+  .dropdown-toggle{
+    i{
+      font-size: 14px;
+
+      line-height: 1;
+    }
+    &:after, &:before{
+      display: none;
+    }
+  }
+}
+
+.login-modal{
+  i{
+    font-size: 14px;
+    line-height: 1;
+  }
+}

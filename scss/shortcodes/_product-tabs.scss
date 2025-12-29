@@ -1,0 +1,27 @@
+.product_tabs{
+  .nav-tabs{
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+    margin-bottom: 45px;
+    @media(max-width: 575px){
+      margin-bottom: 30px;
+    }
+    .nav-link{
+      border: none;
+      padding: 10px 27px;
+      @media(max-width: 575px){
+        margin-bottom: 10px;
+      }
+      &.active, &:hover{
+        background: none;
+        color: $darkColor;
+      }
+    }
+  }
+  .tab-content{
+    border: none;
+    padding: 0;
+    margin-bottom: -30px;
+  }
+}

@@ -1,0 +1,28 @@
+/*
+** Shortcodes
+*/
+@import 'shortcodes/icon-box';
+@import 'shortcodes/special-heading';
+@import 'shortcodes/number-card';
+@import 'shortcodes/price_table';
+@import 'shortcodes/quote-item';
+@import 'shortcodes/items-masonry';
+@import 'shortcodes/blog-post';
+@import 'shortcodes/shop-category';
+@import 'shortcodes/product-tabs';
+@import 'shortcodes/steps';
+@import 'shortcodes/signature';
+@import 'shortcodes/services';
+@import 'shortcodes/products';
+
+.contact-form {
+  textarea {
+    min-height: 100px;
+  }
+}
+
+.excerpt {
+  font-size: 16px;
+  font-weight: 500;
+  color: $darkgreyColor;
+}

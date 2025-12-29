@@ -1,0 +1,82 @@
+
+.testimonials-image{
+  padding: 0 50px 0 110px;
+  @media(max-width: 1200px){
+    padding: 0;
+  }
+  .quote-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .quote-name{
+      font-weight: 500;
+      margin-top: 20px;
+      line-height: 0.8;
+    }
+    .quote-image{
+
+      text-align: center;
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      width: 80px;
+      height: 80px;
+
+      img{
+        border-radius: 50%;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        z-index: 2;
+        border-radius: 50%;
+        top: 40px;
+        right: -9px;
+        width: 30px;
+        height: 30px;
+        background-image: linear-gradient(to bottom, $colorMain3 0%, $colorMain 100%);
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 50px;
+        right: 0px;
+        width: 12px;
+        height: 12px;
+        -webkit-mask: url("../img/quote.png") no-repeat center / contain;
+        background: $lightColor;
+
+      }
+    }
+  }
+
+}
+.testimonials-content{
+ @media(max-width: 991px){
+   margin-top: 30px;
+ }
+  blockquote{
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 460px;
+    @media(max-width: 991px){
+      max-width: 100%;
+    }
+    @media(max-width: 575px){
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0.3em;
+      &:before{
+        display: none;
+      }
+    }
+    cite{
+      font-size: 12px;
+    }
+
+  }
+}

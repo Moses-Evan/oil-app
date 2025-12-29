@@ -1,0 +1,128 @@
+.pricing-plan {
+  text-align: center;
+  padding: 40px;
+  transition: 0.3s ease-in-out;
+  &.plan-featured {
+    .plan-price{
+      color: $darkgreyColor;
+    }
+    .price-wrap[class*='bg-']{
+      .plan-price{
+        color: $darkgreyColor;
+      }
+    }
+  }
+  &:hover{
+    top: 48%;
+    box-shadow: -1px 5px 14px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .price-wrap {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 0.7;
+    letter-spacing: 1px;
+    margin: 25px 0 0;
+    color: $colorMain;
+
+    &[class*='bg-'] {
+      padding: 30px 30px;
+      margin-top: 25px;
+      margin-bottom: 0;
+      .plan-sign, .plan-decimals, .plan-price{
+        color: $lightColor;
+      }
+    }
+    .plan-sign, .plan-decimals{
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+
+    }
+    .plan-price {
+      font-family: "Poppins", sans-serif;
+      font-size: 60px;
+      font-weight: 500;
+    }
+
+  }
+  [class*='bg-'] {
+    padding: 10px 30px 30px;
+    margin-left: -41px;
+    margin-right: -41px;
+  }
+  .plan-name {
+    &[class*='bg-'] {
+      padding-top: 30px;
+      margin-top: -40px;
+      margin-bottom: 50px;
+      @media(max-width: 991px){
+        margin-top: 0;
+      }
+     h3{
+       color: $lightColor;
+     }
+    }
+    h3 {
+      font-family: "Poppins", sans-serif;
+      text-transform: capitalize;
+      font-size: 20px;
+      color: $darkgreyColor;
+      line-height: 1;
+      font-weight: 500;
+      position: relative;
+      display: inline-block;
+      @media(max-width: 575px){
+        margin-bottom: 0;
+        padding-left: 0 ;
+      }
+
+    }
+  }
+
+  @media(min-width: 992px) {
+    padding: 47px 50px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+    [class*='bg-'] {
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+    .plan-name[class*='bg-'] {
+      margin-top: -10px;
+    }
+    &.plan-featured {
+      padding: 65px 50px;
+      position: static;
+      transform: none;
+      &:hover{
+        transform: translateY(-2%);
+        box-shadow: -1px 5px 14px 6px rgba(0, 0, 0, 0.2);
+      }
+
+
+    }
+  }
+
+  .plan-features {
+    margin: 30px 0 46px;
+    @media(max-width: 575px){
+      margin: 20px 0 35px;
+    }
+  }
+
+  .plan-button {
+
+  }
+
+  //featured border
+
+}
+

@@ -1,0 +1,158 @@
+/*
+** WordPress Page Links and Pagination
+*/
+.page-item,
+.nav-links,
+.page-links {
+  clear: both;
+  .page-links-title{
+    border: none !important;
+    background-color: transparent !important;
+    color: $darkColor !important;
+    &:hover{
+      background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%) !important;
+      color: $darkColor !important;
+    }
+  }
+  & > span,
+  & > a {
+  
+    border-radius: 50% !important;
+    color: $fontColor !important;
+    background-color: $backgroundColor !important;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 0;
+    font-weight: 500;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0;
+
+    &.prev, &.next{
+      i{
+        font-size: 12px;
+      }
+    }
+    &:hover {
+
+      background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%) !important;
+      color: $lightColor !important;
+    }
+  }
+  &.active > a,
+  & > span {
+
+    background-image: linear-gradient(to top, $colorMain 0%, $colorMain3 100%) !important;
+    color: $lightColor !important;
+  }
+  .fa {
+    font-size: 10px;
+  }
+}
+.page-item{
+    &.active{
+      a{
+        border-color: $darkColor !important;
+        color: $darkColor !important;
+      }
+    }
+    &.disabled, &.next{
+      a{
+        border-color: $darkColor !important;
+        color: $darkColor !important;
+      }
+
+    }
+
+}
+
+//page and comments links smaller
+.comments-pagination,
+.page-links {
+  .page-numbers,
+  & > span,
+  a {
+    //min-width: 2em;
+  }
+}
+
+.page-links a:first-child {
+  margin-left: 1em;
+}
+
+//blog styles
+.pagination {
+  margin-top: 60px;
+  justify-content: center;
+  @media(max-width: 575px){
+    margin-top: 30px;
+  }
+}
+
+//blog post
+.post-nav {
+  margin: 60px 0 0;
+  position: relative;
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+      width: 50%;
+      height: auto;
+      //display: flex;
+      //align-items: center;
+      //justify-content: center;
+      position: relative;
+      padding: 30px 40px;
+      text-align: right;
+
+      transition: 0.2s opacity ease;
+      &:hover {
+        opacity: 0.9;
+      }
+      @media(max-width: 575px) {
+        width: 100%;
+      }
+      .fa {
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+      &:first-child {
+        text-align: left;
+        .fa {
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+    .nav-subtitle {
+      @include small-text();
+      text-align: center;
+      min-width: 8em;
+      padding: 0.25em 0.8em 0.05em;
+      display: inline-block;
+    }
+    .nav-title {
+      display: block;
+    }
+
+    a {
+      @include cover();
+
+    }
+  }
+  //for .cover-image
+  .post-nav-image {
+    display: none;
+  }
+  .cover-image {
+    .post-nav-text-wrap {
+      text-align: center;
+    }
+  }
+}

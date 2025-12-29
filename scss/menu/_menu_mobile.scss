@@ -1,0 +1,144 @@
+/* Mobile Menu (max 991px) styles */
+
+@media(max-width: 767px) {
+  .nav-wrap {
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1199px) {
+  .page_header {
+    [class*="col"] {
+      min-height: 0;
+    }
+  }
+  .top-nav {
+    position: fixed;
+    visibility: hidden;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile-active .top-nav {
+    visibility: visible;
+    opacity: 1;
+    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1002;
+
+  }
+
+  .nav-justified > li > a {
+    text-align: left;
+  }
+  .sf-menu {
+    display: block;
+    position: fixed;
+    overflow: auto;
+    background: $darkColor;
+    border-top: 60px solid $colorMain3;
+    padding: 20px 10px 20px 20px;
+    top: 0;
+    left: 100%;
+    bottom: 100%;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    @media(min-width: 576px){
+      left: 0;
+
+      bottom: 100%;
+    }
+    .mobile-active & {
+      opacity: 1;
+      left: 0;
+      bottom: 0;
+      @media(min-width: 576px){
+        left: 0;
+        bottom: 0;
+
+      }
+    }
+
+    li {
+      position: relative;
+      &:first-child{
+        padding-top: 0;
+      }
+    }
+  }
+  //.top-nav added for color in .ds was dark
+  .top-nav .sf-menu{
+    ul{
+      li{
+        a{
+          text-transform: capitalize;
+          font-size: 18px;
+        }
+
+      }
+    }
+  }
+  .top-nav .sf-menu a {
+    color: $lightColor;
+    z-index: 2;
+    display: block;
+    padding: 10px 0 !important;
+    text-align: left;
+    font-size: 18px;
+    text-transform: capitalize;
+    letter-spacing: 0;
+  }
+  .sf-menu ul {
+    list-style: none;
+
+    margin-top: 0 !important;
+    padding: 0 10px !important;
+    margin-left: 0;
+  }
+  .sf-menu ul li a {
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+
+  /* arrows (for all except IE7) */
+  .sf-arrows .sf-with-ul {
+    padding-right: 3.5em;
+  }
+  /* styling for both css and generated arrows */
+  //.sf-arrows .sf-with-ul:after {
+  .sf-arrows .sf-with-ul + .sf-menu-item-mobile-toggler {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+    &:after {
+       font-family: 'Font Awesome 5 Free', sans-serif;
+      content: '\f105';
+      color: $lightColor;
+      font-weight: 900;
+    }
+  }
+
+  .sfHover > .sf-with-ul + .sf-menu-item-mobile-toggler:after {
+    content: '\f107';
+  }
+}

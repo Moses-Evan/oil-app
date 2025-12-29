@@ -1,0 +1,23 @@
+/* widget_tag_cloud */
+.tagcloud {
+  margin-bottom: -10px;
+  a {
+   border-radius: 5em;
+    padding: 8px 25px;
+    background-image: linear-gradient(to right, $colorMain 0%, $colorMain3 50%, $colorMain 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+    margin: 0 6px 10px 0;
+    text-align: center;
+    display: inline-block;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 16px !important;
+    color: $lightColor;
+    &:hover {
+      background-position: right center;
+    }
+  }
+
+}
