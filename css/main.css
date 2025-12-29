@@ -94,6 +94,31 @@ Border color for elements in color section: rgba(255, 255, 255, 0.15)
 /*
 ** General Styles for HTML tags
 */
+
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/oil/Raleway-VariableFont_wght.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("../fonts/oil/Raleway-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bahn;
+  src: url("../fonts/oil/BAHNSCHRIFT.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 html {
   height: 100%;
   overflow: visible;
@@ -102,17 +127,17 @@ html {
 }
 
 ::-moz-selection {
-  background-color: #dd4454;
+  background-color: #b22ab7;
   color: #fff;
 }
 
 ::selection {
-  background-color: #dd4454;
+  background-color: #b22ab7;
   color: #fff;
 }
 
 ::-moz-selection {
-  background-color: #dd4454;
+  background-color: #b22ab7;
   color: #fff;
 }
 
@@ -21994,9 +22019,19 @@ filters
   min-width: 40px;
   padding: 10px 0px;
 }
-
+.service-v2{
+  cursor: default;
+}
 .service-v2 [class*="col-"]:nth-child(1) .service-single.with-icon.layout2 {
-  background: #26163d;
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/upstream.jpg");
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
 }
 
 .service-v2
@@ -22008,7 +22043,12 @@ filters
 .service-v2
   [class*="col-"]:nth-child(1)
   .service-single.with-icon.layout2:hover {
-  background-image: linear-gradient(to top, #6e1771 0%, #b82cbd 100%);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/upstream.jpg");
+
+  background-size: 140%; /* zoom in */
+  background-position: center;
 }
 
 .service-v2
@@ -22039,7 +22079,7 @@ filters
 .service-v2 [class*="col-"]:nth-child(2) .service-single.with-icon.layout2 {
   background:
     linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
-    url("../images/services/downstream.jpg");
+    url("../images/services/midstream.jpg");
 
   background-size: 100%;
   background-position: center;
@@ -22052,9 +22092,10 @@ filters
 .service-v2 [class*="col-"]:nth-child(2) .service-single.with-icon.layout2:hover {
   background:
     linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
-    url("../images/services/downstream.jpg");
+    url("../images/services/midstream.jpg");
 
-  background-size: 110%; /* zoom in */
+  background-size: 140%; /* zoom in */
+  background-position: center;
 }
 
 .service-v2
@@ -22095,7 +22136,15 @@ filters
 }
 
 .service-v2 [class*="col-"]:nth-child(3) .service-single.with-icon.layout2 {
-  background: rgba(4, 43, 61, 0.5);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/downstream.jpg");
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
 }
 
 .service-v2
@@ -22107,7 +22156,12 @@ filters
 .service-v2
   [class*="col-"]:nth-child(3)
   .service-single.with-icon.layout2:hover {
-  background-image: linear-gradient(to top, #6e1771 0%, #b82cbd 100%);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/downstream.jpg");
+
+  background-size: 140%; /* zoom in */
+   background-position: center;
 }
 
 .service-v2
@@ -22136,7 +22190,15 @@ filters
 }
 
 .service-v2 [class*="col-"]:nth-child(4) .service-single.with-icon.layout2 {
-  background: rgba(4, 43, 61, 0.4);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/power.jpg");
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
 }
 
 .service-v2
@@ -22148,7 +22210,12 @@ filters
 .service-v2
   [class*="col-"]:nth-child(4)
   .service-single.with-icon.layout2:hover {
-  background-image: linear-gradient(to top, #6e1771 0%, #b82cbd 100%);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/power.jpg");
+
+  background-size: 140%; /* zoom in */
+  background-position: center;
 }
 
 .service-v2
@@ -22177,7 +22244,15 @@ filters
 }
 
 .service-v2 [class*="col-"]:nth-child(5) .service-single.with-icon.layout2 {
-  background: rgba(4, 43, 61, 0.2);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/lng.jpg");
+
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
 }
 
 .service-v2
@@ -22189,7 +22264,12 @@ filters
 .service-v2
   [class*="col-"]:nth-child(5)
   .service-single.with-icon.layout2:hover {
-  background-image: linear-gradient(to top, #6e1771 0%, #b82cbd 100%);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/lng.jpg");
+
+  background-size: 180%; /* zoom in */
+  background-position: center;
 }
 
 .service-v2
@@ -22218,7 +22298,15 @@ filters
 }
 
 .service-v2 [class*="col-"]:nth-child(6) .service-single.with-icon.layout2 {
-  background: rgba(4, 43, 61, 5.55112e-17);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/hydrogen.jpg");
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
 }
 
 .service-v2
@@ -22230,7 +22318,12 @@ filters
 .service-v2
   [class*="col-"]:nth-child(6)
   .service-single.with-icon.layout2:hover {
-  background-image: linear-gradient(to top, #6e1771 0%, #b82cbd 100%);
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/hydrogen.jpg");
+
+  background-size: 140%; /* zoom in */
+  background-position: center;
 }
 
 .service-v2
@@ -22250,6 +22343,62 @@ filters
 
 .service-v2
   [class*="col-"]:nth-child(6)
+  .service-single.with-icon.layout2
+  .icon-styled
+  i {
+  background: linear-gradient(to top, #dd4454 0%, #dd9044 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.service-v2 [class*="col-"]:nth-child(7) .service-single.with-icon.layout2 {
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.6), rgba(60, 9, 62, 0.5)),
+    url("../images/services/water.jpg");
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.6s ease, background 0.6s ease;
+}
+
+.service-v2
+  [class*="col-"]:nth-child(7)
+  .service-single.with-icon.layout2:before {
+  display: none;
+}
+
+.service-v2
+  [class*="col-"]:nth-child(7)
+  .service-single.with-icon.layout2:hover {
+  background:
+    linear-gradient(rgba(60, 9, 62, 0.85), rgba(60, 9, 62, 0.85)),
+    url("../images/services/water.jpg");
+
+  background-size: 140%; /* zoom in */
+  background-position: center;
+}
+
+.service-v2
+  [class*="col-"]:nth-child(7)
+  .service-single.with-icon.layout2:hover
+  .icon-styled
+  i {
+  -webkit-text-fill-color: #fff;
+}
+
+.service-v2
+  [class*="col-"]:nth-child(7)
+  .service-single.with-icon.layout2:hover
+  h6:after {
+  background: #fff;
+}
+
+.service-v2
+  [class*="col-"]:nth-child(7)
   .service-single.with-icon.layout2
   .icon-styled
   i {
@@ -27518,9 +27667,19 @@ a.logo img {
 }
 
 a.logo .logo-text {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+a.logo .logo-text-2{
+  font-family: "Bahn", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 100;
   line-height: 0.9;
 }
 
@@ -27535,6 +27694,8 @@ a.logo .logo-subtext {
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 @media (min-width: 768px) and (max-width: 1785px) {
   a.logo .logo-subtext {
@@ -28201,10 +28362,10 @@ body.active-side-header.slide-right .page_header_side {
     height: 600px;
   }
 }
-
+/* added by Moses */
 @media (max-width: 575px) {
   .page_slider .flexslider .slides {
-    height: 600px;
+    height: 700px;
   }
 
   .page_slider .flexslider .slides img {
@@ -28270,7 +28431,7 @@ body.active-side-header.slide-right .page_header_side {
   justify-content: center;
   margin-left: 250px;
   max-width: 730px;
-  padding: 187px 63px;
+  padding: 180px 63px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -28280,10 +28441,17 @@ body.active-side-header.slide-right .page_header_side {
   margin-bottom: 0;
 }
 
+@media (min-width: 1208px) and (max-height: 800px) {
+  .page_slider .intro_layers {
+    margin-left: 120px;
+    transform: scale(0.8);
+  }
+}
+
 @media (max-width: 1200px) {
   .page_slider .intro_layers {
     margin: 0 auto;
-    padding: 100px 63px;
+    padding: 150px 63px;
   }
 }
 
@@ -28370,10 +28538,11 @@ body.active-side-header.slide-right .page_header_side {
     min-height: 0;
     position: static;
   }
-
+  /* Added by Moses */
   .page_slider .intro_layers_wrapper {
+    
     bottom: 0;
-    height: 80vh;
+    height: 100%;
     left: 15px;
     position: absolute;
     right: 15px;
@@ -28382,9 +28551,9 @@ body.active-side-header.slide-right .page_header_side {
   }
 }
 
-@media (min-width: 770px) {
+@media (max-width: 770px) {
   .page_slider .intro_layers_wrapper {
-    height: 100%;
+    margin-top: 30px;
   }
 }
 
@@ -31274,8 +31443,8 @@ img.absolute_image {
 .post-type-archive-fw-portfolio .vertical-item:hover .item-media:before {
   background-image: linear-gradient(
     to top,
-    rgba(221, 68, 84, 0.6) 0%,
-    rgba(221, 144, 68, 0.6) 100%
+    rgba(108, 22, 111, 0.6) 0%,
+    rgba(166, 39, 171, 0.6) 100%
   );
   bottom: 0;
   content: "";
@@ -31560,7 +31729,7 @@ img.absolute_image {
 
 /* Added by Moses */
 
-/* .video-slide {
+ /* .video-slide {
   position: relative;
   overflow: hidden;
   min-width: 100%;
@@ -31575,11 +31744,15 @@ img.absolute_image {
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 1;
-} */
-.ds.cover-image {
-  /* position: relative; */
-  min-height: calc(100vh + 100px); /* Full screen hero */
-  overflow: clip;
+}  */
+
+@media (min-width: 1201px) {
+  
+  .ds.cover-image {
+  
+    min-height: calc(100vh + 100px); 
+    overflow: clip;
+  }
 }
 
 .ds.cover-image::after {

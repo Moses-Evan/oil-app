@@ -825,13 +825,13 @@
                 offset: navHeight
             })
         }
-        if ($().localScroll) {
-            $('.top-nav > ul, .mainmenu_side_wrapper > ul, #land,  .comments-link, .mouse_down, scroll-link').localScroll({
-                duration: 900,
-                easing: 'easeInOutQuart',
-                offset: -navHeight + 40
-            });
-        }
+        // if ($().localScroll) {
+        //     $('.top-nav > ul, .mainmenu_side_wrapper > ul, #land,  .comments-link, .mouse_down, scroll-link').localScroll({
+        //         duration: 900,
+        //         easing: 'easeInOutQuart',
+        //         offset: -navHeight + 40
+        //     });
+        // }
 
         //Added by Moses
        $('.big-btn[href^="#"]').on('click', function (e) {
@@ -848,26 +848,26 @@
         });
 
        $(document).on('click', 'a[href^="#"]', function (e) {
-    var target = $(this.getAttribute('href'));
+            var target = $(this.getAttribute('href'));
 
-    if (target.length) {
-        e.preventDefault();
+            if (target.length) {
+                e.preventDefault();
 
-        // Smooth scroll
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top - 80 // header offset
-        }, 700, 'easeInOutExpo');
+                // Smooth scroll
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - navHeight + 40 // header offset
+                }, 900, 'easeInOutQuart');
 
-        // Remove hash from URL
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+                // Remove hash from URL
+                history.pushState("", document.title, window.location.pathname + window.location.search);
 
-        // Close mobile menu if open
-        if ($('body').hasClass('mobile-active')) {
-            $('body').removeClass('mobile-active');
-            $('.toggle_menu').removeClass('active');
-        }
-    }
-});
+                // Close mobile menu if open
+                if ($('body').hasClass('mobile-active')) {
+                    $('body').removeClass('mobile-active');
+                    $('.toggle_menu').removeClass('active');
+                }
+            }
+        });
 
         //background image teaser and sections with half image bg
         //put this before prettyPhoto init because image may be wrapped in prettyPhoto link
