@@ -8,6 +8,8 @@
 //hidding menu elements that do not fit in menu width
 //processing center logo
     function menuHideExtraElements() {
+        // Disabled: always show all header/menu items (prevent collapsing into "...")
+        return;
 
         //cleaneng changed elements
         $('.sf-more-li, .sf-logo-li').remove();
