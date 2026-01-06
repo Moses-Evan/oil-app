@@ -28504,7 +28504,8 @@ body.active-side-header.slide-right .page_header_side {
 .page_slider .intro_layers {
   -webkit-animation: bubble 5s linear infinite;
   animation: bubble 5s linear infinite;
-  background-image: linear-gradient(to top, #3c093e 0%, #b82cbd 100%);
+  background-image: linear-gradient(to top, #3c093e90 0%, #b82cbd90 100%);
+  /* backdrop-filter: blur(3px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28667,7 +28668,7 @@ body.active-side-header.slide-right .page_header_side {
 
 @media (min-width: 300px) {
   .page_slider .intro_featured_word {
-    font-size: 100px;
+    font-size: 50px;
     font-weight: 300;
     letter-spacing: -1px;
     line-height: 1;
