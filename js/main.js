@@ -1129,13 +1129,13 @@
             $introSlider.each(function (index) {
                 var $currentSlider = $(this);
                 var data = $currentSlider.data();
-                var nav = (data.nav !== 'undefined') ? data.nav : true;
-                var dots = (data.dots !== 'undefined') ? data.dots : true;
-                var speed = (data.speed !== 'undefined') ? data.speed : 7000;
+                var nav = (typeof data.nav !== 'undefined') ? data.nav : true;
+                var dots = (typeof data.dots !== 'undefined') ? data.dots : true;
+                var speed = (typeof data.speed !== 'undefined') ? parseInt(data.speed, 10) : 7000;
 
                 $currentSlider.flexslider({
                     animation: "fade",
-                    pauseOnHover: true,
+                    pauseOnHover: false,
                     useCSS: true,
                     controlNav: dots,
                     directionNav: nav,
@@ -1143,7 +1143,7 @@
                     nextText: "",
                     smoothHeight: false,
                     slideshowSpeed: speed,
-                    animationSpeed: 600,
+                    animationSpeed: 900,
                     start: function (slider) {
                         slider.find('.intro_layers').children().css({'visibility': 'hidden'});
                         slider.find('.flex-active-slide .intro_layers').children().each(function (index) {
