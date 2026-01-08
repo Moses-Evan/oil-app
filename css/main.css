@@ -21711,6 +21711,7 @@ filters
   }
 }
 
+
 .steps-vertical .step-wrap .step-wrap__image {
   -webkit-animation: bubble 5s linear infinite;
   animation: bubble 5s linear infinite;
@@ -22028,10 +22029,9 @@ filters
   align-items: stretch;
 }
 
-
-.market-margins{
-  margin-top: 120px;
-  margin-bottom: 120px;
+.market-margins {
+  margin-top: 160px;
+  margin-bottom: 160px;
 }
 
 .service-v2 [class*="col-"]:nth-child(1) .service-single.with-icon.layout2 {
@@ -26544,8 +26544,6 @@ a img.aligncenter {
     overflow: visible;
   }
 
-  
-
   .sf-menu {
     display: flex !important;
     justify-content: flex-end;
@@ -26558,8 +26556,6 @@ a img.aligncenter {
     display: inline-flex;
     min-width: 0;
   }
-
-  
 }
 
 /* hidden menu items */
@@ -27769,7 +27765,7 @@ a.logo .logo-text-2 {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 100;
-  line-height: 0.9; 
+  line-height: 0.9;
   color: #3c0a3e;
 }
 
@@ -28584,7 +28580,7 @@ body.active-side-header.slide-right .page_header_side {
   font-size: 0;
   height: 5px;
   margin: 0 5px;
-  opacity: 0.;
+  opacity: 0.5;
   position: relative;
   width: 60px;
 }
@@ -31870,3 +31866,152 @@ img.absolute_image {
   z-index: 0;
 }
 
+.clients-carousel .owl-nav button {
+  color: #a627ab !important;
+  background-color: transparent !important;
+  font-size: 24px;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  padding: 10px 15px !important;
+}
+.clients-carousel .owl-nav button span {
+  color: #a627ab !important;
+}
+.clients-carousel .owl-nav button:hover {
+  background-color: #a627ab !important;
+  color: white !important;
+  opacity: 1;
+}
+.clients-carousel .owl-nav button:hover span {
+  color: white !important;
+
+}
+.clients-carousel .owl-prev {
+  left: -50px !important;
+}
+.clients-carousel .owl-next {
+  right: -50px !important;
+}
+.clients-carousel .owl-prev,
+.clients-carousel .owl-next {
+  color: #a627ab !important;
+}
+.clients-carousel .owl-prev span,
+.clients-carousel .owl-next span {
+  color: #a627ab !important;
+}
+.clients-carousel .owl-prev:hover,
+.clients-carousel .owl-next:hover {
+  background-color: #a627ab !important;
+  color: white !important;
+  border: none;
+}
+.clients-carousel .owl-prev:hover span,
+.clients-carousel .owl-next:hover span {
+  color: white !important;
+}
+
+/* Make all logo images the same size */
+.clients-carousel .item img {
+  width: 100% !important;
+  height: 120px !important;
+  object-fit: contain !important;
+}
+
+/* Reduce section margins */
+#projects.ls {
+  margin-left: -50px !important;
+  margin-right: -50px !important;
+}
+
+.clients-carousel {
+  margin: 0 -40px !important;
+  padding: 0 40px !important;
+}
+/* GPU Acceleration for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.owl-carousel {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.owl-item {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.animate {
+  will-change: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+section {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+img {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Footer contact separator */
+.footer-contact-sep {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 0px 0;
+}
+.footer-sep {
+  border: 0;
+  height: 1px;
+  width: 70%;
+  background: rgba(255,255,255,1);
+  margin: 6px 0;
+}
+
+
+
+/* Vertical separators between footer columns (desktop) */
+/* @media (min-width: 992px) {
+  .page_footer .row > .col-lg-4 {
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+  }
+
+
+  .page_footer .row > .col-lg-4 + .col-lg-4::before,
+  .page_footer .row > .col-lg-4 + .col-lg-4 + .col-lg-4::before {
+    content: "";
+    position: absolute;
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50%;
+    background: rgba(255,255,255,1);
+    pointer-events: none;
+  }
+
+  .page_footer .row > .col-lg-4 .widget,
+  .page_footer .row > .col-lg-4 .logo {
+    padding-left: 20px;
+  }
+} */
