@@ -1232,13 +1232,13 @@ input[type="radio"]:disabled + label:before {
 }
 
 .nav-tabs .nav-link:hover {
-  background-image: linear-gradient(to right, #dd4454 0%, #dd9044 100%);
+  background-image: linear-gradient(to right, #6e1771 0%, #9f26a3 50%, #6e1771 100%);
   color: #fff;
 }
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  background-image: linear-gradient(to right, #dd4454 0%, #dd9044 100%);
+  background-image: linear-gradient(to right, #6e1771 0%, #9f26a3 50%, #6e1771 100%);
   color: #fff;
 }
 
@@ -1300,7 +1300,8 @@ input[type="radio"]:disabled + label:before {
 }
 
 .tab-content {
-  border: 2px solid #f2f5f7;
+  border-top: 2px solid #f2f5f7;
+  /* border-bottom: 2px solid #f2f5f7; */
   padding: 40px;
 }
 
@@ -12513,7 +12514,7 @@ body.boxed {
 */
 /* dark grey background section - .ds */
 .ds {
-  background-color: #3c093e;
+  background-color: #410a43;
   color: #fff;
 }
 
@@ -12567,7 +12568,7 @@ body.boxed {
 
 /* dark background section - .ds.ms */
 .ds.ms {
-  background-color: #042b3d;
+  background-color: #340636;
 }
 
 .ds.ms.transparent_bg {
@@ -23488,12 +23489,7 @@ widget_recent_entries
 }
 
 .tagcloud a {
-  background-image: linear-gradient(
-    to right,
-    #dd4454 0%,
-    #dd9044 50%,
-    #dd4454 100%
-  );
+  background-image: linear-gradient(to right, #7a1b7e 0%, #9a249e 50%, #6e1771 100%);
   background-size: 200% auto;
   border-radius: 5em;
   color: #fff;
@@ -27757,7 +27753,7 @@ a.logo .logo-text {
   line-height: 0.9;
   text-transform: uppercase;
   margin-right: 0px;
-  color: #3c0a3e;
+  /* color: #3c0a3e; */
 }
 
 a.logo .logo-text-2 {
@@ -27766,7 +27762,7 @@ a.logo .logo-text-2 {
   font-size: 30px;
   font-weight: 100;
   line-height: 0.9;
-  color: #3c0a3e;
+  /* color: #3c0a3e; */
 }
 
 @media (max-width: 768px) {
@@ -30845,7 +30841,8 @@ img.absolute_image {
 
 .page_title,
 .call-to-action {
-  background-image: url("../images/title_bg.jpg");
+  background: linear-gradient(rgba(60, 9, 62, 0.5), rgba(60, 9, 62, 0.5)), url("../images/backgrounds/back-1.jpg");
+  /* background: rgba(118,22,112,0.5); */
   background-size: cover;
 }
 
