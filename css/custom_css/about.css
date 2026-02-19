@@ -1,0 +1,511 @@
+/* =====================================================
+   GLOBAL REFINEMENTS
+===================================================== */
+section {
+  scroll-margin-top: 120px;
+}
+
+img {
+  object-fit: cover;
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* =====================================================
+   WHO WE ARE SECTION
+===================================================== */
+#valstom-who-section {
+  padding: 100px 8%;
+  background: #ffffff;
+}
+
+.valstom-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.valstom-content {
+  flex: 1.5;
+  position: relative;
+}
+
+.valstom-content::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 0;
+  width: 4px;
+  height: 90px;
+  background: linear-gradient(180deg, #70114e, transparent);
+}
+
+.valstom-subtitle {
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #70114e;
+  margin-bottom: 14px;
+}
+
+.valstom-title {
+  font-size: clamp(2.3rem, 4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #000;
+  margin-bottom: 28px;
+}
+
+.valstom-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #222;
+  opacity: 0.92;
+  margin-bottom: 18px;
+}
+
+.valstom-list {
+  margin-top: 22px;
+  list-style: none;
+}
+
+.valstom-list li {
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  position: relative;
+  color: #222;
+}
+
+.valstom-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #70114e;
+  font-size: 16px;
+}
+
+.valstom-image-box {
+  flex: 1;
+}
+
+.valstom-image {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  transition: transform 0.6s ease;
+}
+
+.valstom-image:hover {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   VISION SECTION – CINEMATIC
+===================================================== */
+#valstom-vision {
+  padding: 110px 8%;
+  background: linear-gradient(180deg, #70114e, #5b0f40);
+  position: relative;
+  overflow: hidden;
+}
+
+#valstom-vision::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+}
+
+.vision-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.vision-image {
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.vision-image img {
+  width: 100%;
+  min-height: 520px;
+  transition: transform 0.6s ease;
+}
+
+.vision-image:hover img {
+  transform: scale(1.08);
+}
+
+.vision-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.vision-content h2 {
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.vision-content p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===============================
+   ABOUT HERO SECTION
+================================ */
+#ve-about-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 520px;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.ve-about-hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* BACKGROUND IMAGE */
+.ve-about-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* DARK OVERLAY */
+.ve-about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 20, 0.75),
+    rgba(10, 14, 20, 0.45)
+  );
+  z-index: 2;
+}
+
+/* CONTENT */
+.ve-about-hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(32px, 8vw, 120px);
+  max-width: 1000px;
+  color: #ffffff;
+}
+
+/* EYEBROW */
+.ve-about-eyebrow {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #fff; 
+  margin-bottom: 18px;
+}
+
+/* TITLE */
+.ve-about-title {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  /* text-transform: uppercase; */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #ve-about-hero {
+    height: 60vh;
+  }
+
+  .ve-about-hero-content {
+    padding: 0 24px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .ve-about-title {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* =====================================================
+   MISSION SECTION – AUTHORITY
+===================================================== */
+#energy-mission-wrapper {
+  padding: 110px 8%;
+  background: linear-gradient(135deg, #70114e, #70114e);
+  color: #fff;
+}
+
+.mission-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.mission-heading {
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.mission-heading::after {
+  content: "";
+  width: 120px;
+  height: 5px;
+  background: #f9f9f9;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  border-radius: 4px;
+}
+
+.mission-description {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.mission-image-container img {
+  width: 100%;
+  min-height: 480px;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+
+.mission-image-container img:hover {
+  transform: scale(1.06);
+}
+
+/* =====================================================
+   CORE VALUES – PREMIUM CARDS
+===================================================== */
+#core-values-section {
+  padding: 120px 8%;
+  background-color: #f4f6f8;
+}
+
+.core-values-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.core-values-image-box img {
+  width: 100%;
+  min-height: 480px;
+  border-radius: 18px;
+}
+
+.core-values-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #000;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.core-values-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #70114e;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.core-values-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #444;
+  margin-bottom: 36px;
+}
+
+.values-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.single-value-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(112, 17, 78, 0.08),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.single-value-card:hover::before {
+  opacity: 1;
+}
+
+.single-value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.single-value-card h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #70114e;
+  margin-bottom: 10px;
+}
+
+.single-value-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+  .valstom-wrapper,
+  .vision-container,
+  .mission-grid-layout,
+  .core-values-wrapper {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    /* text-align: center; */
+  }
+
+  .valstom-content::before,
+  .mission-heading::after,
+  .core-values-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .values-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   IMAGE SIZE ENHANCEMENTS ONLY
+   (NO STYLE CHANGES)
+========================================= */
+
+/* Ensure images fully occupy containers */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   WHO WE ARE IMAGE
+========================================= */
+.valstom-image {
+  max-width: 760px; /* increased from ~520–640 */
+  width: 100%;
+}
+
+/* Larger screens get even more presence */
+@media (min-width: 1200px) {
+  .valstom-image {
+    max-width: 820px;
+  }
+}
+
+/* =========================================
+   VISION SECTION IMAGE
+========================================= */
+.vision-container {
+  grid-template-columns: 1.5fr 1fr; /* image dominant */
+}
+
+.vision-image img {
+  min-height: 600px; /* increased */
+}
+
+/* =========================================
+   MISSION SECTION IMAGE
+========================================= */
+.mission-grid-layout {
+  grid-template-columns: 1fr 1.35fr; /* image heavier */
+}
+
+.mission-image-container img {
+  min-height: 560px;
+}
+
+/* =========================================
+   CORE VALUES IMAGE
+========================================= */
+.core-values-wrapper {
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.core-values-image-box img {
+  min-height: 560px;
+}
+
+/* =========================================
+   MOBILE IMAGE SIZE TUNING
+========================================= */
+@media (max-width: 900px) {
+  .vision-container,
+  .mission-grid-layout,
+  .core-values-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-image img,
+  .mission-image-container img,
+  .core-values-image-box img {
+    min-height: 360px;
+  }
+}

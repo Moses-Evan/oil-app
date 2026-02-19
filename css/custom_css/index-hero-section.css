@@ -1,0 +1,108 @@
+/* ===============================
+   VIDEO HERO SLIDER
+================================ */
+#ve-bgvideo-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.ve-bgvideo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLIDES */
+.ve-bgvideo-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.ve-bgvideo-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* VIDEO */
+.ve-bgvideo-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.ve-bgvideo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 20, 0.8),
+    rgba(10, 14, 20, 0.4)
+  );
+}
+
+/* CONTENT */
+.ve-bgvideo-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(24px, 8vw, 120px);
+  max-width: 900px;
+  color: #ffffff;
+}
+
+.ve-bgvideo-content h1 {
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.ve-bgvideo-content p {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  max-width: 520px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ===============================
+   BOTTOM WAVE
+================================ */
+.ve-bgvideo-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ve-bgvideo-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ve-bgvideo-content {
+    padding: 0 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ve-bgvideo-content p {
+    max-width: 100%;
+  }
+}

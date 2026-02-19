@@ -1,0 +1,246 @@
+/* =====================================================
+   QUALITY & COMPLIANCE — FULL CSS
+   Modern • Minimal • Enterprise • AMPO-aligned
+===================================================== */
+
+#ve-quality {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  color: #1f2933;
+  letter-spacing: -0.01em;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.ve-quality-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 520px;
+}
+
+.ve-quality-hero-text {
+  padding: 90px;
+}
+
+.ve-quality-hero-text h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+  color: #111827;
+  margin-bottom: 26px;
+}
+
+/* Lead paragraph (stylish, editorial) */
+.ve-quality-lead {
+  font-size: 1.5rem;
+  line-height: 1.9;
+  font-weight: 500;
+  color: #1f2933;
+  padding-left: 18px;
+  border-left: 4px solid #70114e;
+  margin-bottom: 22px;
+  max-width: 720px;
+}
+
+.ve-quality-hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: #4b5563;
+  max-width: 680px;
+}
+
+/* Hero image */
+.ve-quality-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+   WAVE DIVIDER
+================================ */
+.ve-quality-wave svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+/* ===============================
+   QUALITY BLOCKS
+================================ */
+.ve-quality-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  background: #f6f7f9;
+}
+
+/* Alternate subtle background */
+.ve-quality-block:nth-of-type(even) {
+  background: #ffffff;
+}
+
+/* Reverse layout */
+.ve-quality-reverse {
+  direction: rtl;
+}
+
+.ve-quality-reverse > * {
+  direction: ltr;
+}
+
+/* ===============================
+   BLOCK TEXT
+================================ */
+.ve-quality-text {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ve-quality-text h3 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+  color: #111827;
+  margin-bottom: 22px;
+  position: relative;
+  padding-left: 16px;
+}
+
+/* Accent bar */
+.ve-quality-text h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 26px;
+  background: #70114e;
+}
+
+/* Paragraphs */
+.ve-quality-text p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 680px;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   BULLET LIST — TECHNICAL STYLE
+================================ */
+.ve-quality-text ul {
+  padding: 0;
+  margin: 18px 0 0;
+}
+
+.ve-quality-text li {
+  list-style: none;
+  position: relative;
+  padding: 8px 0 8px 26px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+  max-width: 620px;
+}
+
+/* Centered engineering marker */
+.ve-quality-text li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 2px;
+  height: 18px;
+  background: #70114e;
+  transform: translateY(-50%);
+}
+
+.ve-quality-text li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background: #70114e;
+  transform: translateY(-50%);
+}
+
+/* ===============================
+   BLOCK IMAGE
+================================ */
+.ve-quality-image {
+  background: #f0f2f5;
+}
+
+.ve-quality-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Subtle hover polish */
+.ve-quality-block:hover .ve-quality-image img {
+  transform: scale(1.02);
+}
+
+/* ===============================
+   FINAL COMMITMENT
+================================ */
+.ve-quality-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 24px 120px;
+  text-align: center;
+}
+
+.ve-quality-footer h4 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.ve-quality-footer p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4b5563;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .ve-quality-hero,
+  .ve-quality-block {
+    grid-template-columns: 1fr;
+  }
+
+  .ve-quality-hero-text,
+  .ve-quality-text {
+    padding: 50px 24px;
+  }
+
+  .ve-quality-hero-text h2 {
+    font-size: 2.1rem;
+  }
+
+  .ve-quality-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .ve-quality-lead {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,232 @@
+/* =====================================================
+   VALUE-ADDED SERVICES — FINAL POLISH
+   Layout unchanged | No box shadow
+===================================================== */
+
+#ve-value-alt {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+}
+
+/* ===============================
+   INTRO SECTION
+================================ */
+.ve-value-intro {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 110px 24px 90px;
+}
+
+/* Title */
+.ve-value-intro h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  letter-spacing: -0.6px;
+}
+
+/* FIRST PARAGRAPH — STYLISH LEAD */
+.ve-value-intro p:first-of-type {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  font-weight: 500;
+  color: #222;
+  padding-left: 18px;
+  border-left: 4px solid #70114e;
+  margin-bottom: 24px;
+}
+
+/* Normal paragraphs */
+.ve-value-intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+/* ===============================
+   ALTERNATING BLOCKS
+================================ */
+.ve-alt-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+/* Subtle background variation (enterprise-safe) */
+.ve-alt-block:nth-child(even) {
+  background: #fafbfc;
+}
+
+.ve-alt-block:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* Reverse layout */
+.ve-alt-reverse {
+  direction: rtl;
+}
+
+.ve-alt-reverse > * {
+  direction: ltr;
+}
+
+/* ===============================
+   TEXT CONTENT
+================================ */
+.ve-alt-text {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ve-alt-text h3 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.4px;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Accent bar */
+.ve-alt-text h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 28px;
+  background: #70114e;
+}
+
+/* Sub-headings */
+.ve-alt-text h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 28px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+.ve-alt-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+/* ===============================
+   BULLET LIST — CENTERED LINE STYLE
+================================ */
+.ve-alt-text ul {
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.ve-alt-text li {
+  list-style: none;
+  position: relative;
+  padding: 8px 0 8px 26px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Vertical center line */
+.ve-alt-text li::before {
+  /* content: ""; */
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 2px;
+  height: 18px;
+  /* background: #70114e;
+  transform: translateY(-50%); */
+}
+
+/* Dash marker */
+.ve-alt-text li::after {
+  /* content: ""; */
+  position: absolute;
+  /* left: 4px;
+  top: 50%; */
+  width: 10px;
+  height: 2px;
+  /* background: #70114e;
+  transform: translateY(-50%); */
+}
+
+.ve-alt-text ul {
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.ve-alt-text li {
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ARROW */
+.ve-alt-text li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 8px; /* aligns arrow with first line */
+  font-size: 0.9rem;
+  color: #70114e;
+}
+
+/* ===============================
+   IMAGE AREA
+================================ */
+.ve-alt-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ve-alt-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+/* Subtle hover polish */
+.ve-alt-block:hover .ve-alt-image img {
+  transform: scale(1.02);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .ve-alt-block {
+    grid-template-columns: 1fr;
+  }
+
+  .ve-alt-text {
+    padding: 50px 24px;
+  }
+
+  .ve-value-intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .ve-alt-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .ve-value-intro p:first-of-type {
+    font-size: 1.05rem;
+  }
+}

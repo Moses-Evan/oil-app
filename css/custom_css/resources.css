@@ -1,0 +1,98 @@
+/* =====================================================
+   TECHNICAL RESOURCES — PDF PREVIEW GRID
+   Reference-aligned | Clean | Corporate
+===================================================== */
+
+#val-tech-resources {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+}
+
+.val-tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+/* HEADER */
+.val-tech-header {
+  max-width: 860px;
+  margin-bottom: 50px;
+}
+
+.val-tech-header h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 14px;
+  color: #0f172a;
+}
+
+.val-tech-header p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* GRID */
+.val-pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+
+/* ITEM */
+.val-pdf-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* PDF PREVIEW */
+.val-pdf-preview {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.val-pdf-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* META */
+.val-pdf-meta {
+  margin-top: 12px;
+}
+
+.val-pdf-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.val-pdf-download {
+  font-size: 0.85rem;
+  color: #70114e;
+  font-weight: 600;
+}
+
+/* HOVER (SUBTLE) */
+.val-pdf-item:hover .val-pdf-title {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .val-pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .val-tech-container {
+    padding: 70px 20px;
+  }
+}
