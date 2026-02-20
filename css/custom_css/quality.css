@@ -55,16 +55,41 @@
 .ve-quality-hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ===============================
    WAVE DIVIDER
 ================================ */
-.ve-quality-wave svg {
+.ve-quality-wave {
   width: 100%;
   height: 120px;
-  display: block;
+  display: block !important;
+  overflow: visible !important;
+  margin: 0px;
+  padding: 0;
+  background: #ececec;
+  position: relative;
+  visibility: visible !important;
+  opacity: 1 !important;
+  clear: both;
+}
+
+.ve-quality-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block !important;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.ve-quality-wave path {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* ===============================
@@ -188,9 +213,9 @@
 }
 
 /* Subtle hover polish */
-.ve-quality-block:hover .ve-quality-image img {
+/* .ve-quality-block:hover .ve-quality-image img {
   transform: scale(1.02);
-}
+} */
 
 /* ===============================
    FINAL COMMITMENT
