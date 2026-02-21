@@ -69,7 +69,7 @@
 .vep-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* CONTENT */
@@ -204,7 +204,7 @@
 .vim-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* CONTENT */

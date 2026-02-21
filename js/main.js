@@ -1,4 +1,106 @@
 "use strict";
+
+// Initialize page loader IMMEDIATELY before any other code
+(function () {
+  // Calculate base path dynamically to work with GitHub Pages and subfolders
+  var pathArray = window.location.pathname.split("/").filter(function (x) {
+    return x; // remove empty strings
+  });
+
+  // Remove the last element (current file) if it has an extension
+  if (
+    pathArray.length > 0 &&
+    pathArray[pathArray.length - 1].indexOf(".") > -1
+  ) {
+    pathArray.pop();
+  }
+
+  // Detect GitHub Pages repo name vs content directories
+  // Known content directories that shouldn't be included in base path
+  var knownContentDirs = [
+    "products",
+    "css",
+    "js",
+    "images",
+    "documents",
+    "fonts",
+    "mailchimp",
+    "videos",
+  ];
+
+  var baseUrl = "";
+  if (pathArray.length > 0) {
+    var firstSegment = pathArray[0];
+    // If first segment is NOT a content directory, it's the GitHub Pages repo name
+    if (knownContentDirs.indexOf(firstSegment) === -1) {
+      baseUrl = "/" + firstSegment;
+    }
+  }
+
+  var loaderImagePath = baseUrl + "/images/arrow.png";
+
+  // Inject loader CSS immediately
+  var loaderCss =
+    "#custom-page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.98);backdrop-filter:blur(4px);z-index:99999;transition:opacity .35s ease,visibility .35s ease;opacity:1;visibility:visible;}" +
+    "#custom-page-loader.hidden{opacity:0;pointer-events:none;visibility:hidden;}" +
+    "#custom-page-loader .custom-page-loader-inner{display:flex;align-items:center;justify-content:center;padding:20px;}" +
+    "#custom-page-loader img{max-width:160px;max-height:160px;display:block;animation:loader-pulse 1.2s ease-in-out infinite;}" +
+    "@keyframes loader-pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:0.95}100%{transform:scale(1);opacity:1}}" +
+    "#custom-page-loader .custom-loader-fallback{color:#111;font-size:18px;font-weight:600;}";
+
+  var styleEl = document.createElement("style");
+  styleEl.type = "text/css";
+  styleEl.appendChild(document.createTextNode(loaderCss));
+  document.head.appendChild(styleEl);
+
+  // Inject loader HTML immediately into body (VISIBLE by default)
+  var loaderHtml =
+    '<div id="custom-page-loader" aria-hidden="true">' +
+    '  <div class="custom-page-loader-inner">' +
+    '    <img id="custom-page-loader-img" src="' +
+    loaderImagePath +
+    '" alt="Loading" />' +
+    "  </div>" +
+    "</div>";
+
+  // Inject into body as soon as it's available
+  function injectLoaderHtml() {
+    if (document.getElementById("custom-page-loader")) return; // already added
+    var loaderDiv = document.createElement("div");
+    loaderDiv.innerHTML = loaderHtml;
+    document.body.insertBefore(loaderDiv.firstChild, document.body.firstChild);
+  }
+
+  if (document.body) {
+    injectLoaderHtml();
+  } else {
+    // If body doesn't exist yet, wait for it
+    document.addEventListener("DOMContentLoaded", injectLoaderHtml);
+  }
+
+  // Helper to hide loader
+  function hideLoader() {
+    var loader = document.getElementById("custom-page-loader");
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+  }
+
+  // Hide loader when page fully loads
+  window.addEventListener("load", hideLoader);
+
+  // Global reference for navigation loader management
+  window._pageLoaderManager = {
+    show: function () {
+      var loader = document.getElementById("custom-page-loader");
+      if (loader) {
+        loader.classList.remove("hidden");
+      }
+    },
+    hide: hideLoader,
+  };
+})();
+
 //Wrapping all JavaScript code into a IIFE function for prevent global variables creation
 (function ($) {
   var $body = $("body");
@@ -14,159 +116,239 @@
     false,
   );
 
-  // Custom page loader (injects markup + styles and handles navigation)
+  // Disable image downloads throughout the project
   (function () {
-    // Use site-root absolute path so pages in subfolders resolve the same image
-    var loaderImagePath = "/images/arrow.png"; // change this path if your PNG is elsewhere
-
-    var loaderHtml =
-      '<div id="custom-page-loader" class="custom-page-loader" aria-hidden="true">' +
-      '  <div class="custom-page-loader-inner">' +
-      '    <img id="custom-page-loader-img" src="' +
-      loaderImagePath +
-      '" alt="Loading" />' +
-      "  </div>" +
-      "</div>";
-
-    var loaderCss =
-      "\n" +
-      "#custom-page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.65);backdrop-filter:blur(4px);z-index:99999;transition:opacity .35s ease,visibility .35s ease;opacity:1;}" +
-      "#custom-page-loader.hidden{opacity:0;pointer-events:none;}" +
-      "#custom-page-loader.custom-hidden{visibility:hidden;opacity:0;pointer-events:none;}" +
-      "#custom-page-loader .custom-page-loader-inner{display:flex;align-items:center;justify-content:center;padding:20px;}" +
-      "#custom-page-loader img{max-width:160px;max-height:160px;display:block;animation:loader-pulse 1.2s ease-in-out infinite;}" +
-      "@keyframes loader-pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:0.95}100%{transform:scale(1);opacity:1}}" +
-      "#custom-page-loader .custom-loader-fallback{color:#111;font-size:18px;font-weight:600;}";
-
-    // append styles
-    try {
-      var s = document.createElement("style");
-      s.type = "text/css";
-      s.appendChild(document.createTextNode(loaderCss));
-      document.head.appendChild(s);
-    } catch (e) {
-      // fallback for older IE
-      var ss = document.createElement("style");
-      ss.styleSheet.cssText = loaderCss;
-      document.getElementsByTagName("head")[0].appendChild(ss);
-    }
-
-    // append markup (use a function so we run it immediately if DOMContentLoaded already fired)
-    function appendPageLoader() {
-      if (document.getElementById("custom-page-loader")) return; // already added
-      var div = document.createElement("div");
-      div.innerHTML = loaderHtml;
-      document.body.appendChild(div.firstChild);
-      console.info(
-        "custom-page-loader appended — page:",
-        location.pathname,
-        "image path used:",
-        loaderImagePath,
-      );
-      // hide loader initially
-      var $loader = $("#custom-page-loader");
-      $loader.addClass("custom-hidden");
-
-      // helper
-      function showLoader() {
-        $loader.removeClass("custom-hidden");
-        // force reflow then remove hidden class for fade
-        setTimeout(function () {
-          $loader.removeClass("hidden");
-        }, 20);
-      }
-      function hideLoader() {
-        $loader.addClass("hidden");
-        setTimeout(function () {
-          $loader.addClass("custom-hidden");
-        }, 300);
-      }
-
-      // preload image and provide fallback if missing
-      var $img = $("#custom-page-loader-img");
-      $img.show();
-      // attach diagnostic listeners for troubleshooting missing image
-      $img.on("error", function () {
-        console.warn("DOM img error for", this.src);
-      });
-      $img.on("load", function () {
-        console.info(
-          "DOM img loaded",
-          this.src,
-          "naturalWidth=",
-          this.naturalWidth,
-          "naturalHeight=",
-          this.naturalHeight,
-        );
-      });
-      var imgObj = new Image();
-      imgObj.onload = function () {
-        // ensure the real image is used and visible
-        $img.attr("src", loaderImagePath).show();
-      };
-      imgObj.onerror = function () {
-        // show fallback text so the overlay isn't empty
-        $img.hide();
-        if (!$("#custom-loader-fallback").length) {
-          $("#custom-page-loader .custom-page-loader-inner").append(
-            '<div id="custom-loader-fallback" class="custom-loader-fallback">Loading...</div>',
-          );
+    // Prevent drag and drop on images
+    document.addEventListener(
+      "dragstart",
+      function (e) {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+          return false;
         }
-        console.warn("Loader image failed to load:", loaderImagePath);
-      };
-      // start loading
-      imgObj.src = loaderImagePath;
-      // ensure the DOM img has the src set too
-      $img.attr("src", loaderImagePath);
-      console.debug("Requested loader image src set to", loaderImagePath);
+      },
+      false,
+    );
 
-      // TEST: show loader on page load for a short time so you can verify image/fallback
-      var showLoaderOnLoadForTesting = true; // set false to disable
-      var testDelayMs = 30000; // how long the loader remains visible during test
-      if (showLoaderOnLoadForTesting) {
-        // show immediately and hide after delay (useful to debug)
-        showLoader();
-        setTimeout(function () {
-          hideLoader();
-        }, testDelayMs);
+    // Prevent right-click on images (already handled above, but explicit for clarity)
+    document.addEventListener(
+      "mousedown",
+      function (e) {
+        if (e.target.tagName === "IMG" && e.button === 2) {
+          e.preventDefault();
+          return false;
+        }
+      },
+      false,
+    );
+
+    // Prevent pointer events on images to stop selection/dragging
+    document.addEventListener(
+      "selectstart",
+      function (e) {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+          return false;
+        }
+      },
+      false,
+    );
+
+    // Disable copy on images
+    document.addEventListener(
+      "copy",
+      function (e) {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+          return false;
+        }
+      },
+      false,
+    );
+
+    // Apply CSS to prevent user interactions with images
+    var imgProtectionCss =
+      "img { user-select: none; pointer-events: none; -webkit-user-select: none; -webkit-touch-callout: none; }";
+    try {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      style.appendChild(document.createTextNode(imgProtectionCss));
+      document.head.appendChild(style);
+    } catch (e) {
+      console.warn("Could not apply image protection CSS:", e);
+    }
+  })();
+
+  // Add watermark overlay to all images
+  (function () {
+    function shouldExcludeFromWatermark(img) {
+      // List of excluded class patterns
+      var excludedPatterns = [
+        "header",
+        "navbar",
+        "nav",
+        "footer",
+        "logo",
+        "brand",
+        "client",
+        "partner",
+        "testimonial",
+        "custom-page-loader",
+        "ve-sector-card",
+      ];
+
+      // Check image classes
+      var classList = img.classList.toString().toLowerCase();
+      for (var i = 0; i < excludedPatterns.length; i++) {
+        if (classList.includes(excludedPatterns[i])) {
+          return true;
+        }
       }
 
-      // show on internal navigation clicks
-      $("a").on("click", function (e) {
-        var href = $(this).attr("href");
-        var target = $(this).attr("target");
-        if (!href) return;
-        // ignore anchors, javascript, mailto, tel and external/new-tab links
-        if (href.indexOf("#") === 0) return;
-        if (href.indexOf("javascript:") === 0) return;
-        if (href.indexOf("mailto:") === 0) return;
-        if (href.indexOf("tel:") === 0) return;
-        if (target && target !== "" && target !== "_self") return;
+      // Check parent elements for excluded classes
+      var parent = img.parentElement;
+      while (parent && parent !== document.body) {
+        var parentClass = parent.className.toLowerCase() || "";
+        for (var j = 0; j < excludedPatterns.length; j++) {
+          if (parentClass.includes(excludedPatterns[j])) {
+            return true;
+          }
+        }
+        parent = parent.parentElement;
+      }
 
-        // Let links with download attribute behave normally
-        if ($(this).attr("download") !== undefined) return;
+      // Check data attributes for exclusion
+      if (img.getAttribute("data-no-watermark")) {
+        return true;
+      }
 
-        // show loader and allow navigation
-        showLoader();
-      });
-
-      // show on form submit
-      $("form").on("submit", function () {
-        showLoader();
-      });
-
-      // ensure loader hidden after page load
-      $(window).on("load", function () {
-        hideLoader();
-      });
+      return false;
     }
 
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", appendPageLoader);
-    } else {
-      // DOMContentLoaded already fired
-      appendPageLoader();
+    function addWatermarkToImage(img) {
+      // Skip if should be excluded
+      if (shouldExcludeFromWatermark(img)) {
+        return;
+      }
+
+      // Skip if already watermarked
+      if (
+        img.parentElement &&
+        (img.parentElement.classList.contains("img-watermark-wrapper") ||
+          img.parentElement.getAttribute("data-watermark-container"))
+      ) {
+        return;
+      }
+
+      // Create overlay
+      var overlay = document.createElement("div");
+      overlay.className = "img-watermark-overlay";
+      overlay.textContent = "VALSTOM ENERGY";
+
+      // Check if image has a suitable parent container
+      var parent = img.parentElement;
+      var tagName = parent ? parent.tagName.toLowerCase() : "";
+      var isContainerElement =
+        tagName === "div" || tagName === "picture" || tagName === "figure";
+
+      if (
+        isContainerElement &&
+        !parent.getAttribute("data-watermark-container")
+      ) {
+        // Add overlay to existing container
+        parent.style.position = "relative";
+        parent.setAttribute("data-watermark-container", "true");
+        parent.appendChild(overlay);
+      } else {
+        // Wrap the image
+        var wrapper = document.createElement("div");
+        wrapper.className = "img-watermark-wrapper";
+
+        // Insert wrapper before image
+        img.parentNode.insertBefore(wrapper, img);
+
+        // Move image into wrapper
+        wrapper.appendChild(img);
+
+        // Add overlay to wrapper
+        wrapper.appendChild(overlay);
+      }
     }
+
+    // Apply watermark to existing images
+    var images = document.querySelectorAll("img");
+    images.forEach(function (img) {
+      if (img.complete) {
+        // Image already loaded
+        addWatermarkToImage(img);
+      } else {
+        // Wait for image to load
+        img.addEventListener("load", function () {
+          addWatermarkToImage(img);
+        });
+      }
+      // Also apply immediately for display
+      addWatermarkToImage(img);
+    });
+
+    // Handle dynamically added images
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.tagName === "IMG") {
+            addWatermarkToImage(node);
+          } else if (node.querySelectorAll) {
+            var dynamicImages = node.querySelectorAll("img");
+            dynamicImages.forEach(function (img) {
+              addWatermarkToImage(img);
+            });
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  })();
+
+  // Handle page loader visibility on navigation
+  (function () {
+    // show on internal navigation clicks
+    $("a").on("click", function (e) {
+      var href = $(this).attr("href");
+      var target = $(this).attr("target");
+      if (!href) return;
+      // ignore anchors, javascript, mailto, tel and external/new-tab links
+      if (href.indexOf("#") === 0) return;
+      if (href.indexOf("javascript:") === 0) return;
+      if (href.indexOf("mailto:") === 0) return;
+      if (href.indexOf("tel:") === 0) return;
+      if (target && target !== "" && target !== "_self") return;
+
+      // Let links with download attribute behave normally
+      if ($(this).attr("download") !== undefined) return;
+
+      // Show loader immediately on navigation
+      if (window._pageLoaderManager) {
+        window._pageLoaderManager.show();
+      }
+    });
+
+    // show on form submit
+    $("form").on("submit", function () {
+      if (window._pageLoaderManager) {
+        window._pageLoaderManager.show();
+      }
+    });
+
+    // Hide loader when page fully loads after navigation
+    $(window).on("load", function () {
+      if (window._pageLoaderManager) {
+        window._pageLoaderManager.hide();
+      }
+    });
   })();
 
   //hidding menu elements that do not fit in menu width
