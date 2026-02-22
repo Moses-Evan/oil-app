@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/custom_css/header.css" />
     <link rel="stylesheet" href="css/custom_css/product_detail.css" />
 
-
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -42,6 +41,17 @@
   </head>
 
   <body>
+    <div id="valstomSuccessModal" class="val-modal">
+      <div class="val-modal-content">
+        <div class="val-modal-icon">✓</div>
+        <h3>Enquiry Sent Successfully</h3>
+        <p>
+          Thank you for contacting Valstom Energy. Our team will get back to you
+          shortly.
+        </p>
+        <button id="valModalCloseBtn">Close</button>
+      </div>
+    </div>
     <!--[if lt IE 9]>
       <div class="bg-danger text-center">
         You are using an <strong>outdated</strong> browser. Please
@@ -64,15 +74,13 @@
         <!-- Header -->
         <div id="header-include"></div>
 
-         <section id="val-about-herocontact">
+        <section id="val-about-herocontact">
           <div class="val-about-overlay"></div>
 
           <div class="val-about-content">
             <span class="val-about-eyebrow">CONTACT US</span>
 
-            <h1 class="val-about-title">
-              Reach Our Team
-            </h1>
+            <h1 class="val-about-title">Reach Our Team</h1>
           </div>
         </section>
 
@@ -81,11 +89,13 @@
           <div class="container">
             <!-- Heading -->
             <div class="val-contact-head animate-on-load">
-              <h3 class="val-contact-title">Get in Touch with Valstom Energy</h3>
+              <h3 class="val-contact-title">
+                Get in Touch with Valstom Energy
+              </h3>
               <p class="val-contact-sub">
-                Contact us for equipment supply, project inquiries, or technical support.
-Your inquiry will be directed to the appropriate team for response.
-
+                Contact us for equipment supply, project inquiries, or technical
+                support. Your inquiry will be directed to the appropriate team
+                for response.
               </p>
             </div>
 
@@ -96,8 +106,34 @@ Your inquiry will be directed to the appropriate team for response.
                   <form
                     class="val-contact-form"
                     id="valContactForm"
-                    method="post"
+                    method="POST"
+                    action="https://api.web3forms.com/submit"
                   >
+                    <input
+                      type="hidden"
+                      name="access_key"
+                      value="15e3b370-53b5-4a10-bdc7-65e14383efec"
+                    />
+
+                    <input
+                      type="hidden"
+                      name="subject"
+                      value="New Enquiry from Valstom Energy Website"
+                    />
+
+                    <input
+                      type="hidden"
+                      name="from_name"
+                      value="Valstom Energy Website"
+                    />
+
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      class="hidden"
+                      style="display: none"
+                    />
+
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
@@ -152,12 +188,7 @@ Your inquiry will be directed to the appropriate team for response.
                       ></textarea>
                     </div>
 
-                    <button
-                      type="button"
-                      class="val-btn-send"
-                      onclick="sendValstomEmail()"
-                      id="submitBtn"
-                    >
+                    <button type="submit" class="val-btn-send" id="submitBtn">
                       Send Message
                     </button>
                   </form>
@@ -167,8 +198,6 @@ Your inquiry will be directed to the appropriate team for response.
               <!-- RIGHT: DETAILS -->
               <div class="col-lg-5">
                 <div class="val-contact-info animate-on-load">
-                  
-
                   <div class="val-info-list">
                     <a class="val-info-item" href="tel:+97143488752">
                       <i class="fas fa-phone"></i>
@@ -210,25 +239,23 @@ Your inquiry will be directed to the appropriate team for response.
                     <div class="val-map-title">Location</div>
 
                     <div class="val-map-image-wrapper">
-  <img
-    src="images/map1.png"
-    alt="Dubai Location Map"
-    class="val-map-image"
-    id="dubaiMapImage"
-  />
+                      <img
+                        src="images/map1.png"
+                        alt="Dubai Location Map"
+                        class="val-map-image"
+                        id="dubaiMapImage"
+                      />
 
-  <!-- Dubai Pin -->
-  <div
-    class="val-map-pin"
-    onclick="openDubaiMap()"
-    aria-label="Open Dubai in Google Maps"
-  >
-    <i class="fas fa-map-marker-alt"></i>
-    <span>Dubai</span>
-  </div>
-</div>
-
-
+                      <!-- Dubai Pin -->
+                      <div
+                        class="val-map-pin"
+                        onclick="openDubaiMap()"
+                        aria-label="Open Dubai in Google Maps"
+                      >
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dubai</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -239,76 +266,78 @@ Your inquiry will be directed to the appropriate team for response.
         <!-- Footer START -->
 
         <!-- Footer -->
-			<footer class="ve-footer">
-				<div class="container">
-					<div class="ve-footer-grid">
+        <footer class="ve-footer">
+          <div class="container">
+            <div class="ve-footer-grid">
+              <!-- Brand -->
+              <div class="ve-footer-brand">
+                <a href="./" class="ve-footer-logo">
+                  <img
+                    src="images/logo/Logo_with tag line_all white.png"
+                    alt="Valstom Energy"
+                  />
+                </a>
+                <div style="padding: 30px; padding-top: 40px">
+                  Valstom Energy DWC-LLC <br />
+                  Dubai, UAE <br />
+                  T: +971 4 257 94 90 <br />
+                  E: sales@valstomenergy.com
+                </div>
 
-						<!-- Brand -->
-						<div class="ve-footer-brand">
-							<a href="./" class="ve-footer-logo">
-								<img src="images/logo/Logo_with tag line_all white.png" alt="Valstom Energy" />
-							</a>
-							<div style="padding: 30px;
-    padding-top: 40px;">
-								Valstom Energy DWC-LLC  <br/>
-								Dubai, UAE  <br/>
-								T: +971 4 257 94 90  <br/>
-								E: sales@valstomenergy.com
+                <div class="ve-footer-social">
+                  <a
+                    href="https://www.linkedin.com/company/valstom-energy/"
+                    target="_blank"
+                    aria-label="Valstom LinkedIn"
+                    class="ve-footer-social-link"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
 
-							</div>
+                  <a
+                    href="https://youtube.com/@valstomenergy?si=YcuxR_q7EQvqhSMQ"
+                    target="_blank"
+                    aria-label="Valstom YouTube"
+                    class="ve-footer-social-link"
+                  >
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
 
-							<div class="ve-footer-social">
-								<a href="https://www.linkedin.com/company/valstom-energy/"
-									target="_blank"
-									aria-label="Valstom LinkedIn"
-									class="ve-footer-social-link">
-									<i class="fa-brands fa-linkedin"></i>
-								</a>
+              <!-- Quick Links -->
+              <div class="ve-footer-links-col">
+                <div class="ve-footer-title">Quick Links</div>
+                <ul class="ve-footer-links">
+                  <li><a href="about.html">About Us</a></li>
+                  <li>
+                    <a href="products/valves-and-flow-control.html">Products</a>
+                  </li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="quality.html">Quality</a></li>
+                </ul>
+              </div>
 
-								<a href="https://youtube.com/@valstomenergy?si=YcuxR_q7EQvqhSMQ"
-									target="_blank"
-									aria-label="Valstom YouTube"
-									class="ve-footer-social-link">
-									<i class="fa-brands fa-youtube"></i>
-								</a>
-							</div>
+              <!-- CTA -->
+              <div class="ve-footer-cta">
+                <h6 class="ve-footer-title">Contact Us</h6>
+                <p class="ve-footer-text">
+                  Have a question? Need more information?<br />
+                  <b>We’d love to hear from you.</b>
+                </p>
 
-						</div>
+                <a href="contact.html" class="ve-footer-btn">
+                  Get in touch with us <span>›</span>
+                </a>
+              </div>
+            </div>
 
-						<!-- Quick Links -->
-						<div class="ve-footer-links-col">
-							<div class="ve-footer-title">Quick Links</div>
-							<ul class="ve-footer-links">
-                <li><a href="about.html">About Us</a></li>
-								<li><a href="products/valves-and-flow-control.html">Products</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="quality.html">Quality</a></li>
-								
-							</ul>
-						</div>
-
-
-						<!-- CTA -->
-						<div class="ve-footer-cta">
-							<h6 class="ve-footer-title">Contact Us</h6>
-							<p class="ve-footer-text">
-								Have a question? Need more information?<br />
-								<b>We’d love to hear from you.</b>
-							</p>
-
-							<a href="contact.html" class="ve-footer-btn">
-								Get in touch with us <span>›</span>
-							</a>
-						</div>
-
-					</div>
-
-					<div class="ve-footer-bottom">
-						© <span class="copyright_year">2026</span> Valstom Energy. All rights reserved.
-					</div>
-				</div>
-			</footer>
-
+            <div class="ve-footer-bottom">
+              © <span class="copyright_year">2026</span> Valstom Energy. All
+              rights reserved.
+            </div>
+          </div>
+        </footer>
       </div>
       <!-- eof #box_wrapper -->
     </div>
@@ -499,35 +528,86 @@ Your inquiry will be directed to the appropriate team for response.
     <!-- Custom JS -->
     <script src="js/header.js"></script>
     <script>
-  function openDubaiMap() {
-    window.open(
-      "https://www.google.com/maps/search/Valstom+Energy+DWC-LLC+P.O.+Box+455844+A3+Building,+DWC+Business+Park+Dubai,+United+Arab+Emirates/@25.0765385,55.2274861,10z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
-      "_blank"
-    );
-  }
+      function openDubaiMap() {
+        window.open(
+          "https://www.google.com/maps/search/Valstom+Energy+DWC-LLC+P.O.+Box+455844+A3+Building,+DWC+Business+Park+Dubai,+United+Arab+Emirates/@25.0765385,55.2274861,10z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
+          "_blank",
+        );
+      }
 
-  window.addEventListener("load", () => {
-    const img = document.getElementById("dubaiMapImage");
-    const pin = document.querySelector(".val-map-pin");
+      window.addEventListener("load", () => {
+        const img = document.getElementById("dubaiMapImage");
+        const pin = document.querySelector(".val-map-pin");
 
-    // ORIGINAL image width (VERY IMPORTANT)
-    const ORIGINAL_WIDTH = 1536; // 🔴 replace if your image width is different
-    const ORIGINAL_HEIGHT = 1024; // 🔴 replace if your image height is different
+        // ORIGINAL image width (VERY IMPORTANT)
+        const ORIGINAL_WIDTH = 1536; // 🔴 replace if your image width is different
+        const ORIGINAL_HEIGHT = 1024; // 🔴 replace if your image height is different
 
-    // Center of your coords
-    const pinX = 633.5;
-    const pinY = 644;
+        // Center of your coords
+        const pinX = 633.5;
+        const pinY = 644;
 
-    // Convert to %
-    const leftPercent = (pinX / ORIGINAL_WIDTH) * 100;
-    const topPercent = (pinY / ORIGINAL_HEIGHT) * 100;
+        // Convert to %
+        const leftPercent = (pinX / ORIGINAL_WIDTH) * 100;
+        const topPercent = (pinY / ORIGINAL_HEIGHT) * 100;
 
-    pin.style.left = leftPercent + "%";
-    pin.style.top = topPercent + "%";
-  });
-</script>
+        pin.style.left = leftPercent + "%";
+        pin.style.top = topPercent + "%";
+      });
+    </script>
 
+    <script>
+      const form = document.getElementById("valContactForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const successModal = document.getElementById("valstomSuccessModal");
+      const closeBtn = document.getElementById("valModalCloseBtn");
 
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
+        // 🔵 Show global loader
+        if (window._pageLoaderManager) {
+          window._pageLoaderManager.show();
+        }
+
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            form.reset();
+            successModal.classList.add("show");
+          } else {
+            alert("Submission failed. Please try again.");
+          }
+        } catch (error) {
+          console.error(error);
+          alert("Network error. Please try again.");
+        } finally {
+          submitBtn.disabled = false;
+
+          // 🔴 Always hide loader
+          if (window._pageLoaderManager) {
+            window._pageLoaderManager.hide();
+          }
+        }
+      });
+
+      // Close modal
+      closeBtn.addEventListener("click", function () {
+        successModal.classList.remove("show");
+      });
+    </script>
   </body>
 </html>
