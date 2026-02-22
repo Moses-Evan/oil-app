@@ -43,9 +43,12 @@
   var loaderCss =
     "#custom-page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.98);backdrop-filter:blur(4px);z-index:99999;transition:opacity .35s ease,visibility .35s ease;opacity:1;visibility:visible;}" +
     "#custom-page-loader.hidden{opacity:0;pointer-events:none;visibility:hidden;}" +
-    "#custom-page-loader .custom-page-loader-inner{display:flex;align-items:center;justify-content:center;padding:20px;}" +
-    "#custom-page-loader img{max-width:160px;max-height:160px;display:block;animation:loader-pulse 1.2s ease-in-out infinite;}" +
-    "@keyframes loader-pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:0.95}100%{transform:scale(1);opacity:1}}" +
+    "#custom-page-loader .custom-page-loader-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:20px;}" +
+    "#custom-page-loader .loaderNew{width:fit-content;font-size:40px;line-height:1.5;font-family:'Montserrat',sans-serif;font-weight:bold;text-transform:uppercase;color:#0000;-webkit-text-stroke:1px #ff0080;background:radial-gradient(1.13em at 50% 1.6em,#b12076 99%,#bd227c 101%) calc(50% - 1.6em) 0/3.2em 100% no-repeat text,radial-gradient(1.13em at 50% -0.8em,#b12076 99%,#bd227c 101%) 50% .8em/3.2em 100% repeat-x text;animation:l9 2s linear infinite;}" +
+    "#custom-page-loader .loaderNew:before{content:'VALSTOM';}" +
+    "#custom-page-loader img{max-width:60px;max-height:60px;display:block;animation:bounce 1.5s ease-in-out infinite;opacity:0.7;}" +
+    "@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.6}50%{transform:translateY(8px);opacity:1;}}" +
+    "@keyframes l9{to{background-position:calc(50% + 1.6em) 0,calc(50% + 3.2em) .8em}}" +
     "#custom-page-loader .custom-loader-fallback{color:#111;font-size:18px;font-weight:600;}";
 
   var styleEl = document.createElement("style");
@@ -57,9 +60,10 @@
   var loaderHtml =
     '<div id="custom-page-loader" aria-hidden="true">' +
     '  <div class="custom-page-loader-inner">' +
+    '    <div class="loaderNew"></div>' +
     '    <img id="custom-page-loader-img" src="' +
     loaderImagePath +
-    '" alt="Loading" />' +
+    '" alt="Loading arrow" />' +
     "  </div>" +
     "</div>";
 
@@ -248,12 +252,20 @@
       // Check if image has a suitable parent container
       var parent = img.parentElement;
       var tagName = parent ? parent.tagName.toLowerCase() : "";
+      var parentClassName = parent ? parent.className.toLowerCase() : "";
       var isContainerElement =
         tagName === "div" || tagName === "picture" || tagName === "figure";
 
+      // Don't use parent container for product spec images or services images - always wrap
+      var shouldWrap =
+        parentClassName.includes("__spec_image") ||
+        parentClassName.includes("ve-alt-image") ||
+        parentClassName.includes("ve-quality-image");
+
       if (
         isContainerElement &&
-        !parent.getAttribute("data-watermark-container")
+        !parent.getAttribute("data-watermark-container") &&
+        !shouldWrap
       ) {
         // Add overlay to existing container
         parent.style.position = "relative";

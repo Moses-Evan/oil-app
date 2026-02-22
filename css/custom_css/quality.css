@@ -68,7 +68,7 @@
   overflow: visible !important;
   margin: 0px;
   padding: 0;
-  background: #ececec;
+  background: #ffffff;
   position: relative;
   visibility: visible !important;
   opacity: 1 !important;
@@ -99,7 +99,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 420px;
-  background: #f6f7f9;
+  /* background: #f6f7f9; */
 }
 
 /* Alternate subtle background */
@@ -202,9 +202,8 @@
    BLOCK IMAGE
 ================================ */
 .ve-quality-image {
-  background: #f0f2f5;
+  background: #ffffff;
 }
-
 
 .ve-quality-image {
   display: flex;
@@ -216,7 +215,7 @@
 .ve-quality-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.6s ease;
 }
 

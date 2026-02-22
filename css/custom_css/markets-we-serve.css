@@ -266,4 +266,21 @@
   .vim-content h3 {
     font-size: 1.6rem;
   }
+  .vep-hero,
+  .vep-block {
+    grid-template-columns: 1fr;
+  }
+
+  .vep-hero-text,
+  .vep-content {
+    padding: 50px 24px;
+  }
+
+  .vep-hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .vep-content h3 {
+    font-size: 1.6rem;
+  }
 }
