@@ -44,9 +44,9 @@
     "#custom-page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.98);backdrop-filter:blur(4px);z-index:99999;transition:opacity .35s ease,visibility .35s ease;opacity:1;visibility:visible;}" +
     "#custom-page-loader.hidden{opacity:0;pointer-events:none;visibility:hidden;}" +
     "#custom-page-loader .custom-page-loader-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:20px;}" +
-    "#custom-page-loader .loaderNew{width:fit-content;font-size:20px;line-height:1.5;font-family:'Raleway',sans-serif;font-weight:800;text-transform:uppercase;color:#0000;-webkit-text-stroke:1px #bd227c;background:radial-gradient(1.13em at 50% 1.6em,#b12076 99%,#bd227c 101%) calc(50% - 1.6em) 0/3.2em 100% no-repeat text,radial-gradient(1.13em at 50% -0.8em,#b12076 99%,#bd227c 101%) 50% .8em/3.2em 100% repeat-x text;animation:l9 1s linear infinite;}" +
+    "#custom-page-loader .loaderNew{width:fit-content;font-size:30px;line-height:1.5;font-family:'Raleway',sans-serif;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#0000;-webkit-text-stroke:1px #70114e;background:radial-gradient(1.13em at 50% 1.6em,#70114e 99%,white 101%) calc(50% - 1.6em) 0/3.2em 100% no-repeat text,radial-gradient(1.13em at 50% -0.8em,#70114e 99%,#70114e 101%) 50% .8em/3.2em 100% repeat-x text;animation:l9 1s linear infinite;}" +
     "#custom-page-loader .loaderNew:before{content:'VALSTOM';}" +
-    "#custom-page-loader img{max-width:40px;max-height:40px;display:block;animation:bounce 1.5s ease-in-out infinite;opacity:0.7;}" +
+    "#custom-page-loader img{max-width:40px;max-height:40px;display:block; visibility:hidden; animation:bounce 1.5s ease-in-out infinite;opacity:0.7;}" +
     "@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.6}50%{transform:translateY(8px);opacity:1;}}" +
     "@keyframes l9{to{background-position:calc(50% + 1.6em) 0,calc(50% + 3.2em) .10em}}" +
     "#custom-page-loader .custom-loader-fallback{color:#111;font-size:18px;font-weight:600;}";
@@ -188,7 +188,7 @@
     function shouldExcludeFromWatermark(img) {
       // List of excluded class patterns
       var excludedPatterns = [
-        "header",
+        "pdf",
         "navbar",
         "nav",
         "footer",
