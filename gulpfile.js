@@ -162,3 +162,34 @@ gulp.task('scripts', function() {
 	.pipe(concat('compressed.js'))
 	.pipe(gulp.dest('js/'));
 });
+
+
+var gulp = require('gulp');
+var fileinclude = require('gulp-file-include');
+var del = require('del');
+
+// Clean dist folder
+gulp.task('clean', function () {
+    return del(['dist']);
+});
+
+// Process HTML with includes
+gulp.task('html', function () {
+    return gulp.src(['./*.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./dist'));
+});
+
+// Copy assets
+gulp.task('copy', function () {
+    return gulp.src(['css/**/*', 'js/**/*', 'images/**/*'], { base: '.' })
+        .pipe(gulp.dest('./dist'));
+});
+
+// Build task
+gulp.task('build', ['clean'], function () {
+    gulp.start('html', 'copy');
+});
