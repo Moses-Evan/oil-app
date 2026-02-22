@@ -127,6 +127,7 @@
                       value="Valstom Energy Website"
                     />
 
+
                     <input
                       type="checkbox"
                       name="botcheck"
@@ -188,7 +189,12 @@
                       ></textarea>
                     </div>
 
-                    <button type="submit" class="val-btn-send" id="submitBtn" style="cursor: pointer;">
+                    <button
+                      type="submit"
+                      class="val-btn-send"
+                      id="submitBtn"
+                      style="cursor: pointer"
+                    >
                       Send Message
                     </button>
                   </form>
@@ -556,6 +562,7 @@
       });
     </script>
 
+
     <script>
       const form = document.getElementById("valContactForm");
       const submitBtn = document.getElementById("submitBtn");
@@ -565,16 +572,17 @@
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        // 🔵 Show global loader
         if (window._pageLoaderManager) {
           window._pageLoaderManager.show();
         }
 
         submitBtn.disabled = true;
 
-        const formData = new FormData(form);
-
         try {
+     
+
+          const formData = new FormData(form);
+
           const response = await fetch(form.action, {
             method: "POST",
             headers: {
@@ -597,14 +605,12 @@
         } finally {
           submitBtn.disabled = false;
 
-          // 🔴 Always hide loader
           if (window._pageLoaderManager) {
             window._pageLoaderManager.hide();
           }
         }
       });
 
-      // Close modal
       closeBtn.addEventListener("click", function () {
         successModal.classList.remove("show");
       });
