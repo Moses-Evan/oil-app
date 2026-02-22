@@ -423,7 +423,7 @@ img {
   .valstom-content::before,
   .mission-heading::after,
   .core-values-title::after {
-    left: 50%;
+    left: -12px;
     transform: translateX(-50%);
   }
 
