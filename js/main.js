@@ -9,7 +9,6 @@
     var loader = document.querySelector(".preloader");
     if (loader) {
       loader.classList.add("hidden");
-      document.body.style.visibility = "visible";
     }
   }
 
@@ -2536,12 +2535,12 @@
     }
 
     //page preloader
-    $(".preloaderimg").fadeOut(150);
-    $(".preloader")
-      .fadeOut(150)
-      .delay(50, function () {
-        $(this).remove();
-      });
+    // $(".preloaderimg").fadeOut(150);
+    // $(".preloader")
+    //   .fadeOut(150)
+    //   .delay(50, function () {
+    //     $(this).remove();
+    //   });
   } //eof windowLoadInit
   $(function () {
     documentReadyInit();

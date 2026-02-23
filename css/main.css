@@ -127,7 +127,7 @@ figure[data-watermark-container] {
   background: rgba(255, 255, 255, 0.911);
   backdrop-filter: blur(4px);
   z-index: 99999;
-  transition: opacity .5s ease, visibility .45s ease;
+  transition: opacity .5s ease, visibility .5s ease;
   opacity: 1;
   visibility: visible;
 }
