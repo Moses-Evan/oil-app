@@ -105,8 +105,8 @@ figure[data-watermark-container] {
   color: #ffffff00;
   -webkit-text-stroke: 1px #70114e;
   background:
-    radial-gradient(1.13em at 50% 1.6em,#70114e 99%,#0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
-    radial-gradient(1.13em at 50% -0.8em,#0000 99%,#70114e 101%) 50% .8em/3.2em 100% repeat-x  text;
+    radial-gradient(1.13em at 50% 1.6em,#a11a72 99%,#0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+    radial-gradient(1.13em at 50% -0.8em,#0000 99%,#b61e81 101%) 50% .8em/3.2em 100% repeat-x  text;
   animation: l9 2s linear infinite;
 }
 #custom-page-loader .loaderNew:before {
@@ -127,7 +127,7 @@ figure[data-watermark-container] {
   background: rgba(255, 255, 255, 0.911);
   backdrop-filter: blur(4px);
   z-index: 99999;
-  transition: opacity .35s ease, visibility .35s ease backdrop-filter .35s ease;
+  transition: opacity .5s ease, visibility .45s ease;
   opacity: 1;
   visibility: visible;
 }

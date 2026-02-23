@@ -63,12 +63,12 @@
   }
 
   // Helper to hide loader
-  // function hideLoader() {
-  //   var loader = document.getElementById("custom-page-loader");
-  //   if (loader) {
-  //     loader.classList.add("hidden");
-  //   }
-  // }
+  function hideLoader() {
+    var loader = document.getElementById("custom-page-loader");
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+  }
 
   // Hide loader when page fully loads
   window.addEventListener("load", hideLoader);
