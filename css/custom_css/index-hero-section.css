@@ -140,4 +140,7 @@
   .ve-bgvideo-content p {
     max-width: 100%;
   }
+  .ve-bgvideo-nav {
+    bottom: 50px;
+  }
 }

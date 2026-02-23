@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.valstomenergy.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/services.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/quality.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/resources.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/news-and-updates.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/energy-and-process-industries.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/industrial-and-manufacturing-sectors.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/valves-and-flow-control.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/actuation-and-automation.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/pipes-fittings-and-steel-products.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/pumps-and-mechanical-equipment.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/wellhead-and-drilling-equipment.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://www.valstomenergy.com/products/instrumentation-and-specialty-items.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.valstomenergy.com/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
