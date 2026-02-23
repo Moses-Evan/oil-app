@@ -92,26 +92,68 @@ figure[data-watermark-container] {
 /* new Loader */
 
 /* HTML: <div class="loader"></div> */
-.loaderNew {
+
+/* HTML: <div class="loader"></div> */
+#custom-page-loader .loaderNew {
   width: fit-content;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 1.5;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
-  color: #0000;
-  -webkit-text-stroke: 1px #000000;
+  letter-spacing: 3px;
+  color: #ffffff00;
+  -webkit-text-stroke: 1px #70114e;
   background:
-    radial-gradient(1.13em at 50% 1.6em,#b12076 99%,#bd227c 101%) calc(50% - 1.6em) 0/3.2em 100% no-repeat text,
-    radial-gradient(1.13em at 50% -0.8em,#b12076 99%,#bd227c 101%) 50% .8em/3.2em 100% repeat-x text;
+    radial-gradient(1.13em at 50% 1.6em,#70114e 99%,#0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+    radial-gradient(1.13em at 50% -0.8em,#0000 99%,#70114e 101%) 50% .8em/3.2em 100% repeat-x  text;
   animation: l9 2s linear infinite;
 }
-.loaderNew:before {
-  content: "VALSTOM";
+#custom-page-loader .loaderNew:before {
+  content: "Valstom";
 }
-
 @keyframes l9 {
   to {background-position: calc(50% + 1.6em) 0,calc(50% + 3.2em) .8em}
+}
+
+
+
+#custom-page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.911);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  transition: opacity .35s ease, visibility .35s ease backdrop-filter .35s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+#custom-page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+#custom-page-loader .custom-page-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+
+
+
+#custom-page-loader .custom-loader-fallback {
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 
@@ -11502,7 +11544,7 @@ img {
 
 /*page preloader*/
 .preloader {
-  background: rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 0.151);
   bottom: 0;
   height: 100%;
   left: 0;
@@ -32141,30 +32183,4 @@ img {
   margin: 6px 0;
 }
 
-/* Vertical separators between footer columns (desktop) */
-/* @media (min-width: 992px) {
-  .page_footer .row > .col-lg-4 {
-    padding-left: 30px;
-    padding-right: 30px;
-    position: relative;
-  }
 
-
-  .page_footer .row > .col-lg-4 + .col-lg-4::before,
-  .page_footer .row > .col-lg-4 + .col-lg-4 + .col-lg-4::before {
-    content: "";
-    position: absolute;
-    left: 0; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 50%;
-    background: rgba(255,255,255,1);
-    pointer-events: none;
-  }
-
-  .page_footer .row > .col-lg-4 .widget,
-  .page_footer .row > .col-lg-4 .logo {
-    padding-left: 20px;
-  }
-} */
