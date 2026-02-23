@@ -2,71 +2,14 @@
 
 // Initialize page loader IMMEDIATELY before any other code
 (function () {
-  // Calculate base path dynamically to work with GitHub Pages and subfolders
-  var pathArray = window.location.pathname.split("/").filter(function (x) {
-    return x; // remove empty strings
-  });
-
-  // Remove the last element (current file) if it has an extension
-  if (
-    pathArray.length > 0 &&
-    pathArray[pathArray.length - 1].indexOf(".") > -1
-  ) {
-    pathArray.pop();
-  }
-
-  // Detect GitHub Pages repo name vs content directories
-  // Known content directories that shouldn't be included in base path
-  var knownContentDirs = [
-    "products",
-    "css",
-    "js",
-    "images",
-    "documents",
-    "fonts",
-    "mailchimp",
-    "videos",
-  ];
-
-  var baseUrl = "";
-  if (pathArray.length > 0) {
-    var firstSegment = pathArray[0];
-    // If first segment is NOT a content directory, it's the GitHub Pages repo name
-    if (knownContentDirs.indexOf(firstSegment) === -1) {
-      baseUrl = "/" + firstSegment;
-    }
-  }
-
-  var loaderImagePath = baseUrl + "/images/arrow.png";
-
  
-  var loaderHtml =
-    '<div id="custom-page-loader" aria-hidden="true">' +
-    '  <div class="custom-page-loader-inner">' +
-    '    <div class="loaderNew"></div>' +
-    "  </div>" +
-    "</div>";
-
-  // Inject into body as soon as it's available
-  function injectLoaderHtml() {
-    if (document.getElementById("custom-page-loader")) return; // already added
-    var loaderDiv = document.createElement("div");
-    loaderDiv.innerHTML = loaderHtml;
-    document.body.insertBefore(loaderDiv.firstChild, document.body.firstChild);
-  }
-
-  if (document.body) {
-    injectLoaderHtml();
-  } else {
-    // If body doesn't exist yet, wait for it
-    document.addEventListener("DOMContentLoaded", injectLoaderHtml);
-  }
 
   // Helper to hide loader
   function hideLoader() {
-    var loader = document.getElementById("custom-page-loader");
+    var loader = document.querySelector(".preloader");
     if (loader) {
       loader.classList.add("hidden");
+      document.body.style.visibility = "visible";
     }
   }
 
@@ -76,7 +19,7 @@
   // Global reference for navigation loader management
   window._pageLoaderManager = {
     show: function () {
-      var loader = document.getElementById("custom-page-loader");
+      var loader = document.querySelector(".preloader");
       if (loader) {
         loader.classList.remove("hidden");
       }

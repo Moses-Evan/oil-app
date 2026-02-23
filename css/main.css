@@ -94,7 +94,7 @@ figure[data-watermark-container] {
 /* HTML: <div class="loader"></div> */
 
 /* HTML: <div class="loader"></div> */
-#custom-page-loader .loaderNew {
+.preloader_image  {
   width: fit-content;
   font-size: 35px;
   line-height: 1.5;
@@ -109,7 +109,7 @@ figure[data-watermark-container] {
     radial-gradient(1.13em at 50% -0.8em,#0000 99%,#b61e81 101%) 50% .8em/3.2em 100% repeat-x  text;
   animation: l9 2s linear infinite;
 }
-#custom-page-loader .loaderNew:before {
+.preloader_image:before {
   content: "Valstom";
 }
 @keyframes l9 {
@@ -118,7 +118,7 @@ figure[data-watermark-container] {
 
 
 
-#custom-page-loader {
+.preloader {
   position: fixed;
   inset: 0;
   display: flex;
@@ -132,7 +132,7 @@ figure[data-watermark-container] {
   visibility: visible;
 }
 
-#custom-page-loader.hidden {
+.preloader.hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -11543,7 +11543,7 @@ img {
 }
 
 /*page preloader*/
-.preloader {
+/* .preloader {
   background: rgba(255, 255, 255, 0.151);
   bottom: 0;
   height: 100%;
@@ -11552,7 +11552,7 @@ img {
   right: 0;
   top: 0;
   z-index: 13000;
-}
+} */
 
 .no-js .preloader,
 .lt-ie9 .preloader,
@@ -11560,7 +11560,7 @@ img {
   display: none;
 }
 
-.preloader_image {
+/* .preloader_image {
   background: url(../img/preloader.gif) no-repeat 50% 50% transparent;
   height: 256px;
   left: 50%;
@@ -11568,7 +11568,7 @@ img {
   position: absolute;
   top: 50%;
   width: 256px;
-}
+} */
 
 /* animated elements */
 .animate {
