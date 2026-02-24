@@ -124,8 +124,8 @@ figure[data-watermark-container] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.911);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.979);
+  backdrop-filter: blur(10px);
   z-index: 99999;
   transition: opacity .5s ease, visibility .5s ease;
   opacity: 1;
