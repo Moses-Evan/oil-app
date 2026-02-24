@@ -879,12 +879,19 @@
     <!-- eof #canvas -->
 
     <script>
-      fetch("header.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("header-include").innerHTML = data;
+document.addEventListener("DOMContentLoaded", function () {
+
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header-include").innerHTML = data;
+
+            // Initialize navbar ONLY after header is injected
+            new VANavbar();
         });
-    </script>
+
+});
+</script>
 
     <!-- Custom JS -->
     <script src="js/header.js"></script>

@@ -486,12 +486,16 @@
         });
       });
     </script>
-    <script>
-      fetch("../header-products.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("header-include").innerHTML = data;
-        });
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("../header-products.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("header-include").innerHTML = data;
+
+            new VANavbar();
+          });
+      });
     </script>
 
     <!-- Custom JS -->

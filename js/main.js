@@ -27,6 +27,18 @@
   };
 })();
 
+ document.addEventListener("DOMContentLoaded", function () {
+        fetch("header.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("header-include").innerHTML = data;
+
+            // Initialize navbar ONLY after header is injected
+            new VANavbar();
+            setupAnchorLinks();
+          });
+      });
+
 //Wrapping all JavaScript code into a IIFE function for prevent global variables creation
 (function ($) {
   var $body = $("body");

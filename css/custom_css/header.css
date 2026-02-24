@@ -442,7 +442,7 @@
     .ve-dropdown.open .ve-drop-menu {
         max-height: 400px;
         padding: 8px 20px 12px;
-        border-left-color: rgba(255, 255, 255, 0.3);
+        
     }
     
     .ve-drop-menu a {
@@ -674,12 +674,15 @@
         overflow: hidden;
         transition: max-height 0.4s ease;
         border-left: 3px solid transparent;
+        /* border-left: 3px solid rgba(255, 255, 255, 0.4); */
+        transition: all 0.15s ease;
     }
 
     .ve-dropdown.open .ve-drop-menu {
         max-height: 500px;
         padding: 8px 0;
         border-left: 3px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.15s ease;
     }
 
     .ve-drop-menu li {

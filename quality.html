@@ -418,6 +418,7 @@
     </div>
     <!-- eof #canvas -->
 
+    <script src="js/header.js"></script>
     <script src="js/compressed.js"></script>
     <script src="js/main.js"></script>
 
@@ -430,16 +431,8 @@
       });
     </script>
 
-    <!-- Header Include JS -->
-    <script>
-      fetch("header.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("header-include").innerHTML = data;
-        });
-    </script>
+
 
     <!-- Custom JS -->
-    <script src="js/header.js"></script>
   </body>
 </html>
