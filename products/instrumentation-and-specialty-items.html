@@ -355,7 +355,7 @@
       <!-- eof #box_wrapper -->
     </div>
     <!-- eof #canvas -->
-
+    <script src="../js/header.js"></script>
     <script src="../js/compressed.js"></script>
     <script src="../js/main.js"></script>
 
@@ -398,18 +398,6 @@
           prevBtn.addEventListener("click", () => showSlide(index - 1));
           nextBtn.addEventListener("click", () => showSlide(index + 1));
         });
-      });
-    </script>
-    <script src="../js/header.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("../header-products.html")
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById("header-include").innerHTML = data;
-
-            new VANavbar();
-          });
       });
     </script>
 

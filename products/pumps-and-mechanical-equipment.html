@@ -393,6 +393,7 @@
     </div>
     <!-- eof #canvas -->
 
+     <script src="../js/header.js"></script>
     <script src="../js/compressed.js"></script>
     <script src="../js/main.js"></script>
 
@@ -437,18 +438,8 @@
         });
       });
     </script>
-    <script src="../js/header.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("../header-products.html")
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById("header-include").innerHTML = data;
-
-            new VANavbar();
-          });
-      });
-    </script>
+   
+  
 
     <!-- Custom JS -->
     <script src="../js/index.js"></script>
