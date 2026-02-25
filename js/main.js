@@ -27,18 +27,28 @@
   };
 })();
 
- document.addEventListener("DOMContentLoaded", function () {
-        fetch("header.html")
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById("header-include").innerHTML = data;
+document.addEventListener("DOMContentLoaded", function () {
 
-            // Initialize navbar ONLY after header is injected
+    const headerContainer = document.getElementById("header-include");
+    if (!headerContainer) return;
+
+    // Detect if inside products folder
+    const isInsideProducts = window.location.pathname.includes('/products/');
+
+    const headerPath = isInsideProducts 
+        ? "../header-products.html" 
+        : "header.html";
+
+    fetch(headerPath)
+        .then(res => res.text())
+        .then(data => {
+            headerContainer.innerHTML = data;
+
             new VANavbar();
             setupAnchorLinks();
-          });
-      });
+        });
 
+});
 //Wrapping all JavaScript code into a IIFE function for prevent global variables creation
 (function ($) {
   var $body = $("body");
