@@ -116,6 +116,23 @@
     </nav>
   </div>
 </header>
+<!-- <script>
+(function () {
+    var canonicalURL = window.location.origin + window.location.pathname;
+
+    var link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    link.setAttribute("href", canonicalURL);
+
+    document.head.appendChild(link);
+})();
+</script> -->
+
+<script>
+if (location.hostname === "www.valstomenergy.com") {
+  location.replace("https://valstomenergy.com" + location.pathname);
+}
+</script>
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="js/compressed.js"></script>
 <script src="js/main.js"></script>
